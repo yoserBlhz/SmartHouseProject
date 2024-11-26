@@ -1,0 +1,18 @@
+.room-card {
+    width: 300px;
+    margin: 10px auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .room-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .room-card img.room-icon {
+    max-width: 80%; /* Vous pouvez ajuster cette taille selon vos besoins */
+    max-height: 80%;
+    object-fit: contain; /* Assure que l'image reste bien proportionnée */
+  }
