@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 
 const SignUpPAth=require("./routes/SignUpRoute")
 const LoginPath=require("./routes/LoginRoute")
+const addRoomPath=require("./routes/AddRoom")
 
 
 mongoose.connect("mongodb://localhost/A")
@@ -16,7 +17,7 @@ app.use(express.json())
 app.use("/api/SignUp",SignUpPAth)
 app.use("/api",LoginPath)
 
-
+app.use("/api",addRoomPath)
 
 const port =5000
   
