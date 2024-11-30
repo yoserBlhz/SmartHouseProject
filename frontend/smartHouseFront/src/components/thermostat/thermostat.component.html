@@ -1,0 +1,93 @@
+<div class="thermostat-container">
+    <div class="header">
+      <h3>Temperature</h3>
+      <i class="bi bi-three-dots-vertical"></i>
+    </div>
+  
+    <div class="knob-container">
+      <div class="knob">
+        <div class="temperature">
+          <span>{{ temperature }}</span>
+          <span>°C</span>
+        </div>
+        <div class="mode">
+          <i *ngIf="mode === 'heating'" class="bi bi-fire"></i>
+          <i *ngIf="mode === 'cooling'" class="bi bi-snow"></i>
+          <i *ngIf="mode === 'dry'" class="bi bi-droplet"></i>
+        </div>
+      </div>
+    </div>
+  
+    <div class="mode-buttons">
+      <button
+        [class.active]="mode === 'heating'"
+        (click)="setMode('heating')"
+      >
+        <i class="bi bi-fire"></i> Heating
+      </button>
+      <button
+        [class.active]="mode === 'cooling'"
+        (click)="setMode('cooling')"
+      >
+        <i class="bi bi-snow"></i> Cooling
+      </button>
+      <button [class.active]="mode === 'dry'" (click)="setMode('dry')">
+        <i class="bi bi-droplet"></i> Dry
+      </button>
+    </div>
+  
+    <div class="humidity-control">
+      <label>Humidity</label>
+      <div class="slider-container">
+        <input
+          type="range"
+          min="0"
+          max="100"
+          [(ngModel)]="humidity"
+        />
+        <span>{{ humidity }}%</span>
+      </div>
+    </div>
+  
+  
+  </div>
+  
+
+
+<!-- 
+   <div class="sensor-container">
+    <div class="temperature-knob">
+      <div class="knob">
+        <div class="temperature">
+          <span>{{ temperature }}</span>
+          <span>°C</span>
+        </div>
+        <div class="mode">
+          <i *ngIf="mode === 'heating'" class="bi bi-fire"></i>
+          <i *ngIf="mode === 'cooling'" class="bi bi-snow"></i>
+          <i *ngIf="mode === 'dry'" class="bi bi-droplet"></i>
+        </div>
+      </div>
+    </div>
+  
+    <div class="gas-container">
+      <div class="gas-knob">
+        <div class="gas-level">
+          <span>{{ gasLevel }}</span> 
+
+          <span>%</span>
+        </div>
+        <div class="status">
+          <i *ngIf="gasLevel < 30" class="bi bi-shield-check text-success"></i>
+          <i *ngIf="gasLevel >= 30 && gasLevel <= 70" class="bi bi-exclamation-circle text-warning"></i>
+          <i *ngIf="gasLevel > 70" class="bi bi-x-circle text-danger"></i>
+        </div>
+      </div>
+    </div>
+  
+    <div class="humidity-container">
+      <p>Humidity: <strong>{{ humidity }}%</strong></p>
+      <input type="range" [value]="humidity" disabled />
+    </div>
+  </div> -->
+  

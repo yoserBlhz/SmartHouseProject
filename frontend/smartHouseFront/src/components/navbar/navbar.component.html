@@ -1,18 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-    <div class="container-fluid">
-      <a class="navbar-brand" >{{ currentDate }}</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item" >
-            <a class="nav-link"   >Welcome: <span class="name" >{{name}}</span> </a> 
-          </li> 
-          <li class="nav-item">
-            <a class="nav-link" href="#" routerLink="/" (click)="logOut()"><i class="bi bi-box-arrow-right"></i> Logout</a>
-          </li>
-        </ul>
-      </div>
+<!-- 
+<nav class="navbar">
+  <div class="logo">
+    <img src="assets/img.png" alt="Logo" class="logo-img" />
+    <h2>smart house</h2>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search..." />
+    <i class="bi bi-search search-icon"></i>
+  </div>
+
+
+  <div class="right-section">
+    <div class="notification">
+      <i class="bi bi-bell"></i>
     </div>
-  </nav>
+    <div class="profile">
+      <img src="assets/profile.png" alt="Profile Avatar" class="avatar" />
+    </div>
+  </div>
+</nav> -->
+
+
+
+
+
+
+
+<nav class="navbar">
+  <div class="search-bar">
+    <input type="text" placeholder="Search..." />
+  </div>
+  <div class="user-info">
+    <span>User Name</span>
+    <img src="assets/profile.png" alt="Avatar" class="avatar" />
+  </div>
+</nav>

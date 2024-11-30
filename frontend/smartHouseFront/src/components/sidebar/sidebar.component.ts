@@ -1,5 +1,6 @@
  import { Component, EventEmitter, Output } from '@angular/core';
  import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,11 +10,18 @@
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
-  @Output() toggle = new EventEmitter<boolean>();
-  isSidebarClosed = false;
+  isSidebarClosed = false; // État initial de la barre latérale
+  currentRoute = ''; // Stocke la route active
 
-  toggleSidebar() {
-    this.isSidebarClosed = !this.isSidebarClosed;
-    this.toggle.emit(this.isSidebarClosed);
+  constructor(private router: Router) {
+    // Met à jour la route active à chaque changement
+    this.router.events.subscribe(() => {
+      this.currentRoute = this.router.url;
+    });
+  }
+
+  toggleSidebar(): void {
+    this.isSidebarClosed = !this.isSidebarClosed; // Bascule entre les états
   }
 }
+

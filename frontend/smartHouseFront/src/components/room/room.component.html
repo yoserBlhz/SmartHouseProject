@@ -1,6 +1,29 @@
-<div class="card room-card text-center">
-  <div class="card-body">
-    <i class="bi bi-door-open display-4 text-primary"></i> Icône de room
-    <h5 class="card-title mt-3">{{ roomName }}</h5> <!-- Nom de la room -->
+<!-- 
+
+<div class="rooms-container">
+  <h2>Rooms</h2>
+  <div class="rooms-grid">
+    <div class="room-card" *ngFor="let room of rooms">
+      <img [src]="room.image" [alt]="room.name" />
+      <h3>{{ room.name }}</h3>
+      <p>{{ room.description }}</p>
+      <button>{{ room.buttonText }}</button>
+    </div>
+  </div>
+</div>
+ -->
+
+ <div class="rooms-container">
+  <div class="rooms-grid">
+    <div class="room-card" *ngFor="let room of rooms">
+      <div class="room-image">
+        <img [src]="room.image" [alt]="room.name" />
+        <div class="room-overlay">
+          <h3>{{ room.name }}</h3>
+          <p>{{ room.description }}</p>
+          <button>{{ room.buttonText }}</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

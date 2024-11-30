@@ -1,33 +1,20 @@
-<app-navbar></app-navbar>
-<div class="container-fluid">
-  <div class="row">
-    <app-sidebar
-      class="col-auto"
-      [class.sidebar-collapsed]="isSidebarClosed"
-      (toggle)="handleSidebarToggle($event)"
-    ></app-sidebar>
-    <main class="col" [class.main-expanded]="isSidebarClosed">
-      <div class="d-flex flex-wrap align-items-center justify-content-between pt-3 pb-2 mb-3 border-bottom">
-        <div class="input-group" style="max-width: 300px;">
-          <span class="input-group-text">
-            <i class="bi bi-search"></i>
-          </span>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Search Room"
-          />
-        </div>
-        <button class="btn btn-primary btn-sm"><i class="bi bi-plus"></i>
-          Add Room</button>
-      </div>
+      <div class="dashboard-layout">
+      <app-navbar></app-navbar>
+    
+      <div class="main-container">
 
-      <div class="d-flex flex-wrap justify-content-center gap-3">
-        <app-room roomName="Living Room"></app-room>
-        <app-room roomName="Bedroom"></app-room>
-        <app-room roomName="Kitchen"></app-room>
-        <app-room roomName="Bathroom"></app-room>
+        <app-sidebar></app-sidebar>
+    
+        <div class="main-content">
+          <div class="title">
+            <h1>Your Rooms</h1>
+          </div>
+    
+          <div >
+            <app-room></app-room>
+            <app-thermostat></app-thermostat>
+          </div>
+        </div>
       </div>
-    </main>
-  </div>
-</div>
+    </div> 
+      
