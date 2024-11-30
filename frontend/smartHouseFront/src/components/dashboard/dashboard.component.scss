@@ -10,7 +10,7 @@
 }
 
 .app-sidebar {
-  width: 250px; /* ou selon la largeur de votre sidebar */
+  width: 70px; /* ou selon la largeur de votre sidebar */
   background-color: #f4f4f4;
 }
 
@@ -19,11 +19,9 @@
   flex-direction: column;
   flex: 1;
   padding: 20px;
-  padding-top: 30px; /* Ajoute un espace entre le navbar et le texte "Your Rooms" */
 }
 
 .title {
-  margin-bottom: 10px; /* Réduit l'espace entre "Your Rooms" et le contenu */
   font-size: 24px;
   font-weight: bold;
   color: #333;
@@ -36,3 +34,7 @@
   flex: 1;
   margin-top: 10px; /* Ajoute un petit espace entre "Your Rooms" et les images */
 }
+
+
+
+
