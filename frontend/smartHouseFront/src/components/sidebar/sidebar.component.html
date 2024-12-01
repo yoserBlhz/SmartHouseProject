@@ -1,0 +1,93 @@
+<!-- <div class="d-flex flex-column flex-shrink-0 p-3 sidebar" [class.closed]="isSidebarClosed">
+    <button class="toggle-btn" (click)="toggleSidebar()">
+      <i class="bi bi-list icon"></i>
+      <span *ngIf="!isSidebarClosed">Toggle Sidebar</span>
+    </button>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="/home" class="nav-link" aria-current="page">
+          <i class="bi bi-house-door icon"></i>
+          <span *ngIf="!isSidebarClosed">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="/devices" class="nav-link link-dark">
+          <i class="bi bi-phone-vibrate"></i>
+          <span *ngIf="!isSidebarClosed">Devices</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="/users" class="nav-link link-dark">
+          <i class="bi bi-people icon"></i>
+          <span *ngIf="!isSidebarClosed"> Users</span>
+        </a>
+      </li>
+      <li>
+        <a href="/rapport"  class="nav-link link-dark">
+          <i class="bi bi-file-earmark-text icon"></i>
+          <span *ngIf="!isSidebarClosed">Rapport</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="/"  class="nav-link link-dark">
+          <i class="bi bi-bell"></i>
+          <span *ngIf="!isSidebarClosed" >Notifications</span>
+        </a>
+      </li>
+    </ul>
+  </div>  
+
+  -->
+
+
+
+
+
+  <div class="sidebar" [class.collapsed]="isSidebarClosed">
+    <div class="sidebar-toggle" (click)="toggleSidebar()">
+      <!-- <mat-icon>menu</mat-icon> -->
+      <i class="bi bi-menu-button icon"></i>
+
+    </div>
+    <div class="menu-items" >
+    <nav>
+      <a routerLink="/home" mat-button>
+        <!-- <mat-icon>home</mat-icon> -->
+        <i class="bi bi-house-door icon"></i>
+
+        <span>Home</span>
+      </a>
+      <a routerLink="/devices" mat-button>
+        <!-- <mat-icon>devices</mat-icon> -->
+        <i class="bi bi-phone-vibrate"></i>
+
+        <span>Devices</span>
+      </a>
+      <a routerLink="/users" mat-button>
+        <!-- <mat-icon>group</mat-icon> -->
+        <i class="bi bi-people icon"></i>
+
+        <span>Users</span>
+      </a>
+      <a routerLink="/reports" mat-button>
+        <!-- <mat-icon>bar_chart</mat-icon> -->
+        <i class="bi bi-file-earmark-text icon"></i>
+
+        <span>Reports</span>
+      </a>
+      <a routerLink="/notifications" mat-button>
+        <!-- <mat-icon>bar_chart</mat-icon> -->
+        <i class="bi bi-bell"></i>
+        <span>Notifications</span>
+      </a>
+      <a routerLink="/logout" mat-button>
+        <!-- <mat-icon>logout</mat-icon> -->
+        <i class="bi bi-box-arrow-left"></i>
+        <span>Logout</span>
+      </a>
+    </nav>
+  </div>
+  </div>
+  

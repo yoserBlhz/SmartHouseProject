@@ -1,0 +1,134 @@
+
+
+
+// .rooms-container {
+//   text-align: center;
+//   padding: 20px;
+// }
+
+// .rooms-container h2 {
+//   font-size: 2rem;
+//   margin-bottom: 20px;
+// }
+
+// .rooms-grid {
+//   display: flex;
+//   gap: 20px;
+//   justify-content: center;
+//   flex-wrap: wrap;
+// }
+
+// .room-card {
+//   background: #fff;
+//   border-radius: 8px;
+//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//   padding: 20px;
+//   max-width: 300px;
+//   text-align: center;
+// }
+
+// .room-card img {
+//   width: 100%;
+//   border-radius: 8px;
+//   margin-bottom: 15px;
+// }
+
+// .room-card h3 {
+//   font-size: 1.5rem;
+//   margin: 10px 0;
+// }
+
+// .room-card p {
+//   color: #555;
+//   margin-bottom: 15px;
+// }
+
+// .room-card button {
+//   background: #6200ea;
+//   color: #fff;
+//   border: none;
+//   padding: 10px 15px;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   font-size: 1rem;
+// }
+
+// .room-card button:hover {
+//   background: #3700b3;
+// }
+
+.rooms-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.rooms-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.rooms-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.room-card {
+  position: relative;
+  width: 300px;
+  height: 200px; /* Ajustez la hauteur de chaque carte */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Assure que l'image remplit la carte */
+}
+
+.room-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Couleur semi-transparente pour l'overlay */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.room-card:hover .room-overlay {
+  opacity: 1; /* Affiche l'overlay au survol */
+}
+
+.room-overlay h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.room-overlay p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.room-overlay button {
+  background: #6200ea;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.room-overlay button:hover {
+  background: #3700b3;
+}

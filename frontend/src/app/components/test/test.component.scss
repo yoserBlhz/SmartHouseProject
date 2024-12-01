@@ -1,0 +1,231 @@
+/* Full-screen background */
+.dynamic-bg {
+    position: relative;
+    background-image: url('/images/rooms/livingroom.avif');
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  
+  /* Shadow overlay */
+  .dynamic-bg::after {
+    content: '';
+    position: fixed; /* Fix the shadow overlay position */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ensure it covers the full viewport */
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1; /* Ensure it stays on top of the background image */
+    pointer-events: none; /* Allow interaction with other elements below */
+}
+  
+  /* Dashboard container */
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto; /* Center the dashboard */
+    width: 100%;
+    padding: 24px;
+  }
+  
+  
+  /* Card styling */
+  .card {
+    background-color: #ffffff;
+    border-radius: 20px; /* Coins plus arrondis */
+    padding: 24px; /* Plus d'espace intérieur */
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px; /* Largeur fixe augmentée */
+    height: 400px; /* Hauteur augmentée */
+    box-shadow: none;
+    z-index: 2;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Temperature Value Section */
+  .temp-value {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .temp-image {
+    width: 120px; /* Agrandir l'image */
+    height: 120px;
+    margin-bottom: 12px;
+  }
+  
+  .temperature-text {
+    font-size: 40px; /* Police plus grande */
+    font-weight: bold;
+    color: #5899e3;
+  }
+  
+  /* Title Section */
+  .temp-title span {
+    font-size: 22px; /* Police plus grande pour le titre */
+    font-weight: 600;
+    color: #383874;
+  }
+  
+  /* Controls Section */
+  .temp-controls {
+    display: flex;
+    justify-content: center;
+    gap: 24px; /* Plus d'espace entre les icônes */
+    margin-top: 20px;
+  }
+  
+  .icon {
+    width: 50px; /* Agrandir les icônes */
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .icon:hover {
+    transform: scale(1.3); /* Effet plus marqué au survol */
+  }
+  
+  /* Plus and Minus Icon Styling */
+  .plus {
+    filter: drop-shadow(0 2px 5px rgba(0, 170, 255, 0.5));
+  }
+  
+  .minus {
+    filter: drop-shadow(0 2px 5px rgba(255, 0, 0, 0.5));
+  }
+  
+  /* General Body Reset */
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    overflow: hidden;
+  }
+  
+
+ /* Devices Section */
+ .devices-section {
+    margin-top: 40px; /* Add space below the dashboard */
+    padding: 20px;
+    max-width: 1000px; /* Align width with the dashboard */
+    width: 100%;
+    background-color: #ffffffab;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+  
+  
+  /* Search Bar Styling */
+.search-bar {
+    margin-bottom: 16px;
+    text-align: center;
+    
+  }
+  
+  .search-input {
+    width: 90%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-input:focus {
+    border-color: #383874; /* Highlight border when focused */
+  }
+
+  
+  .devices-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color:#383874;
+  }
+  
+  /* Devices List */
+  .devices-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .device-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    margin-bottom: 12px;
+    background-color: #5899e387;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for list items */
+  }
+  
+  .device-item:hover {
+    background-color: #5899e3d3; /* Highlight effect on hover */
+  }
+  
+  .device-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Circular image */
+    margin-right: 16px;
+  }
+  
+  .device-name {
+    flex-grow: 1;
+    font-size: 16px;
+    font-weight: 600;
+    color: #383874;
+  }
+  
+  /* Toggle Button */
+  .toggle-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 16px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .toggle-button.on {
+    background-color: #3f86c099;
+    color: #383874;
+  }
+  
+  .toggle-button.off {
+    background-color: #f17a9e68;
+    color: #383874;
+  }
+  
+
+  

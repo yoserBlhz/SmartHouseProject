@@ -1,0 +1,80 @@
+<div class="col-lg-4">
+  <div class="card shadow position-relative">
+    <img
+      src="images/rooms/livingroom.avif"
+      class="room-image"
+      alt="Living Room"
+    />
+    <div class="image-box">
+      <span class="shadow-text">this room is connected to 5 devices </span>
+    </div>
+  </div>
+</div>
+
+<!--************************-->
+<div class="col-lg-2">
+  <div class="card shadow position-relative">
+    <div>
+      <div class="row">
+        <div class="card">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--************************-->
+
+<div class="col-lg-6">
+  <div class="card shadow">
+    <div class="card-body p-4">
+      <h5 class="card-title">Devices</h5>
+      <div class="table-responsive mt-3">
+        <table class="table">
+          <tbody>
+            <tr *ngFor="let element of dataSource">
+              <td>
+                <div class="d-flex align-items-center">
+                  <img [src]="element.imagePath" alt="devices" width="40" />
+                  <div class="ms-3">
+                    <h6 class="fw-bold mb-1" style="color: #383874 ;font-weight: normal;">
+                      {{ element.uname }}
+                    </h6>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                <span
+                  *ngIf="element.priority === 'on'"
+                  style="background-color: #e7bdd3; color: #383874"
+                  class="badge p-2 rounded-pill shadow-sm"
+                >
+                  {{ element.priority | titlecase }}
+                </span>
+                <span
+                  *ngIf="element.priority === 'off'"
+                  style="background-color: #d5f6fe; color: #383874"
+                  class="badge p-2 rounded-pill shadow-sm"
+                >
+                  {{ element.priority | titlecase }}
+                </span>
+              </td>
+
+              <td class="text-end">
+                <button class="btn p-2" (click)="deleteItem()">
+                  <img
+                    src="images/other/remove.svg"
+                    alt="delete"
+                    width="30"
+                    class=" "
+                  />
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

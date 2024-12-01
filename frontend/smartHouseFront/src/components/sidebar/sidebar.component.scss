@@ -1,0 +1,60 @@
+.sidebar {
+  position: fixed; /* Sidebar reste toujours fixe */
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh; /* Toujours sur toute la hauteur */
+  background-color: #2c3e50;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Réserve de l'espace pour le toggle */
+  transition: width 0.3s;
+
+  &.collapsed {
+    width: 70px;
+  }
+}
+
+.sidebar-toggle {
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  background-color: #2c3e50;
+ // border-bottom: 1px solid #444;
+}
+
+.menu-items {
+  flex: 1; /* Prend tout l'espace disponible */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centre les items verticalement */
+  align-items: center; /* Centre les items horizontalement */
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  justify-content: center; /* Centre le contenu dans chaque lien */
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #34495e;
+}
+
+mat-icon {
+  margin-right: 10px;
+}
+
+.collapsed mat-icon {
+  margin-right: 0;
+}
+
+.collapsed span {
+  display: none;
+}
