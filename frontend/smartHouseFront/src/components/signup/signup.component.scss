@@ -1,0 +1,256 @@
+
+
+// /* Container principal */
+// .signup-container {
+//   display: flex;
+//   justify-content: center; /* Centre horizontalement */
+//   align-items: center; /* Centre verticalement */
+//   flex-wrap: wrap; /* Permet le passage en colonne pour petits écrans */
+//   height: 100vh; /* Prend toute la hauteur de la page */
+//   padding: 2rem;
+//   font-family: 'Roboto', sans-serif;
+//   width: 90%;
+//   max-width: 1200px;
+//   margin: 0 auto;
+// }
+
+// /* Section Formulaire */
+// .form-section {
+//   flex: 1;
+//   max-width: 500px; /* Limite la largeur du formulaire */
+//   padding-right: 2rem;
+// }
+
+// .form-section h1 {
+//   font-size: 2.5rem;
+//   color: #2c3e50;
+//   margin-bottom: 1.5rem;
+//   font-weight: bold;
+// }
+
+// .form-group {
+//   margin-bottom: 1.5rem;
+//   text-align: left; /* Aligne le texte des labels à gauche */
+// }
+
+// .form-group label {
+//   display: block;
+//   margin-bottom: 0.5rem;
+//   font-size: 1rem;
+//   color: #2c3e50;
+//   text-align: left; /* Assure l'alignement à gauche */
+// }
+
+// .form-group input {
+//   width: 100%;
+//   padding: 0.75rem;
+//   font-size: 1rem;
+//   border: 1px solid #ccc;
+//   border-radius: 5px;
+//   outline: none;
+// }
+
+// .signup-btn {
+//   display: block;
+//   width: 100%;
+//   padding: 0.75rem;
+//   font-size: 1rem;
+//   color: white;
+//   background-color: #31475c;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   margin-top: 1rem;
+// }
+
+// .signup-btn:hover {
+//   background-color: #2c3e50;
+// }
+
+// .redirect {
+//   margin-top: 1rem;
+//   font-size: 0.9rem;
+//   color: #666;
+// }
+
+// .redirect a {
+//   color: #007bff;
+//   text-decoration: none;
+// }
+
+// .redirect a:hover {
+//   text-decoration: underline;
+// }
+
+// /* Section Image */
+// .image-section {
+//   flex: 1;
+//   max-width: 700px; /* Limite la largeur de l'image */
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-bottom: 0; /* Enlève la marge sur les grands écrans */
+// }
+
+// .image-section img {
+//   max-width: 100%;
+//   height: auto;
+// }
+
+// /* Requête média pour petits écrans */
+// @media (max-width: 768px) {
+//   .signup-container {
+//     flex-direction: column; /* Empile l'image en haut et le formulaire en bas */
+//     height: auto; /* Adapte la hauteur au contenu */
+//   }
+
+//   .image-section {
+//     order: -1; /* Place l'image avant le formulaire */
+//     margin-bottom: 1.5rem;
+//     width: 100%;
+//   }
+
+//   .image-section img {
+//     max-width: 80%; /* Réduit l'image sur petits écrans */
+//   }
+
+//   .form-section {
+//     width: 100%;
+//     padding-right: 0;
+//     text-align: left; /* Texte aligné à gauche */
+//   }
+
+//   .form-group input {
+//     font-size: 1rem; /* Garde une taille adaptée pour les champs */
+//   }
+
+//   .form-group label {
+//     text-align: left; /* Labels restent alignés à gauche */
+//   }
+// }
+
+
+
+/* Container principal */
+.signup-container {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  flex-wrap: wrap; /* Permet le passage en colonne pour petits écrans */
+  height: 100vh; /* Prend toute la hauteur de la page */
+  padding: 2rem;
+  font-family: 'Roboto', sans-serif;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Formulaire */
+.form-section {
+  flex: 1;
+  max-width: 500px; /* Limite la largeur du formulaire */
+  padding-right: 2rem;
+}
+
+.form-section h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left; /* Aligne le texte des labels à gauche */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.signup-btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #31475c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.signup-btn:hover {
+  background-color: #2c3e50;
+}
+
+.redirect {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.redirect a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.redirect a:hover {
+  text-decoration: underline;
+}
+
+/* Section Image */
+.image-section {
+  flex: 1;
+  max-width: 700px; /* Limite la largeur de l'image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Requête média pour petits écrans */
+@media (max-width: 768px) {
+  .image-section {
+    display: none; /* Cache l'image sur les petits écrans */
+  }
+
+  .signup-container {
+    flex-direction: column; /* Empile les éléments */
+    height: auto; /* Adapte la hauteur au contenu */
+    
+  }
+
+  .form-section {
+    width: 100%; /* Le formulaire prend toute la largeur */
+    padding-right: 0;
+  }
+}
+
+
+/* Pour les boutons radio et le texte */
+.form-group div {
+  margin-bottom: 0.5rem; /* Réduit l'espace entre les éléments */
+}
+
+/* Ajuste l'espace entre le bouton radio et le texte */
+.form-group input[type="radio"] {
+  margin-right: 0.25rem; /* Réduit l'espace entre le bouton et le texte */
+}
