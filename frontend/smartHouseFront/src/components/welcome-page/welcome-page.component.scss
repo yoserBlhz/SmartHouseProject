@@ -1,0 +1,224 @@
+
+
+
+// .welcome-container {
+//   font-family: Arial, sans-serif;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+
+// /* Header (haut de page) */
+// .header {
+//   width: 100%;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   padding: 1rem 2rem;
+//   background-color: #f8f9fa;
+//   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+// }
+
+// .logo {
+//   font-weight: bold;
+//   font-size: 1.2rem;
+// }
+
+// .nav .btn {
+//   margin-left: 1rem;
+//   padding: 0.5rem 1rem;
+//   border: none;
+//   border-radius: 5px;
+//   background-color: #31475c;
+//   color: white;
+//   cursor: pointer;
+// }
+
+// .nav .btn.primary {
+//   background-color: #0056b3;
+// }
+
+// .main-content {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   width: 90%;
+//   max-width: 1200px;
+//   margin-top: 2rem;
+// }
+
+// /* Section texte */
+// .text-content {
+//   flex: 1;
+//   padding-right: 2rem;
+// }
+
+// /* Titre principal */
+// .text-content h1 {
+//   font-family: 'Roboto', sans-serif; /* Changer la police */
+//   font-size: 3.5rem; /* Plus grand */
+//   line-height: 1.2;
+//   color: #000; /* Noir pour "Smart House" */
+// }
+
+// .text-content h1 span {
+//   color: #2c3e50; /* Couleur spécifique pour "Security System" */
+// }
+
+// /* Description */
+// .text-content p {
+//   margin: 1rem 0;
+//   color: #666;
+// }
+
+// /* Bouton Learn More */
+// .learn-more-btn {
+//   background-color: #2c3e50;
+//   color: white;
+//   padding: 0.5rem 1rem;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+// }
+
+// /* Section image */
+// .image-content {
+//   flex: 1;
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .image-content img {
+//   max-width: 200%; /* Agrandir l'image */
+//   height: auto;
+// }
+
+
+// h1{
+//   font-family: 'Roboto', sans-serif;
+//   font-size: 3.5rem;
+//   line-height: 1.2;
+//   color: #2c3e50  ;
+//   font-weight: bold;
+// }
+
+
+
+.welcome-container {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header (haut de page) */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav .btn {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #31475c;
+  color: white;
+  cursor: pointer;
+}
+
+.nav .btn.primary {
+  background-color: #0056b3;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 2rem;
+}
+
+/* Section texte */
+.text-content {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.text-content h1 {
+  font-family: 'Roboto', sans-serif; /* Police Roboto */
+  font-size: 3.5rem; /* Taille par défaut */
+  line-height: 1.2;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.text-content h1 span {
+  color: #2c3e50; /* Couleur spécifique pour "Security System" */
+}
+
+.text-content p {
+  margin: 1rem 0;
+  color: #666;
+}
+
+.learn-more-btn {
+  background-color: #2c3e50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Section image */
+.image-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-content img {
+  max-width: 200%; /* Agrandir l'image */
+  height: auto;
+}
+
+/* Requête média pour les petits écrans */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column; /* Empile l'image et le texte en colonne */
+    align-items: center;
+  }
+
+  .image-content {
+    margin-bottom: 1.5rem; /* Ajouter un espacement sous l'image */
+  }
+
+  .image-content img {
+    max-width: 100%; /* Réduire la largeur de l'image pour qu'elle tienne dans l'écran */
+  }
+
+  .text-content {
+    padding-right: 0; /* Supprimer le padding à droite */
+    text-align: center; /* Centrer le texte */
+  }
+
+  .text-content h1 {
+    font-size: 2.5rem; /* Réduire la taille pour petits écrans */
+  }
+
+  .text-content p {
+    font-size: 1rem; /* Réduire la taille du paragraphe */
+  }
+}
