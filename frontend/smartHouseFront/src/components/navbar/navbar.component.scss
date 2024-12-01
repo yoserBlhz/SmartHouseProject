@@ -1,0 +1,189 @@
+
+// .navbar {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   background-color: #3f529b;
+//   padding: 10px 20px;
+//   //color: white;
+//   //box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
+//   .logo {
+//     display: flex;
+//     align-items: center;
+//     margin-right: 20px; /* Espace entre le logo et la barre de recherche */
+//   }
+
+//   .logo-img {
+//     width: 50px; /* Ajustez la taille du logo selon vos besoins */
+//     height: auto;
+//   }
+//   .search-bar {
+//     display: flex;
+//     align-items: center;
+//     position: relative;
+//     margin: 0 auto; /* Centre la barre de recherche horizontalement */
+//     order: 2;
+//     input {
+//       padding: 8px 10px;
+//       border-radius: 20px;
+//       border: none;
+//       outline: none;
+//       font-size: 14px;
+//       width: 250px;
+//     }
+
+//     .search-icon {
+//       position: absolute;
+//       right: 10px;
+//       font-size: 16px;
+//       color: #555;
+//       cursor: pointer;
+//     }
+//   }
+
+//   .right-section {
+//     display: flex;
+//     align-items: center;
+//     gap: 20px;
+//     order: 3;
+//     .notification {
+//       position: relative;
+//       cursor: pointer;
+
+//       .bi-bell {
+//         font-size: 24px;
+//         transition: color 0.3s ease;
+//       }
+
+//       &:hover .bi-bell {
+//         color: #ffd700;
+//       }
+
+//       .badge {
+//         position: absolute;
+//         top: -5px;
+//         right: -5px;
+//         background-color: #e74c3c;
+//         color: white;
+//         border-radius: 50%;
+//         padding: 2px 6px;
+//         font-size: 12px;
+//         font-weight: bold;
+//       }
+//     }
+
+//     .profile {
+//       position: relative;
+
+//       .avatar {
+//         width: 40px;
+//         height: 40px;
+//         border-radius: 50%;
+//         cursor: pointer;
+//       }
+
+//       .dropdown {
+//         position: absolute;
+//         top: 50px;
+//         right: 0;
+//         background: white;
+//         color: #333;
+//         border-radius: 4px;
+//         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+//         z-index: 10;
+
+//         ul {
+//           list-style: none;
+//           margin: 0;
+//           padding: 0;
+
+//           li {
+//             padding: 10px 15px;
+//             cursor: pointer;
+//             transition: background-color 0.3s ease;
+
+//             &:hover {
+//               background-color: #f4f4f4;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navbar {
+  position: fixed; 
+  top:0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #2c3e50;
+  color: white;
+  position: relative;
+}
+
+.search-bar {
+  flex: 1; /* La barre de recherche occupe tout l'espace disponible */
+  text-align: center; /* Centre la barre de recherche */
+}
+
+.search-bar input {
+  padding: 5px;
+  border-radius: 4px;
+  border: none;
+  width: 50%; /* Définit une largeur par défaut */
+  max-width: 300px; /* Limite la largeur */
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 200px; /* Assure que cet espace reste fixe */
+}
+
+.user-info mat-icon {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Réorganise les éléments en colonne */
+    align-items: stretch; /* Permet aux éléments de prendre toute la largeur */
+  }
+
+  .search-bar {
+    text-align: center; /* Assure que la barre reste centrée */
+    margin-bottom: 10px; /* Ajoute un espace entre la recherche et les autres éléments */
+  }
+
+  .user-info {
+    justify-content: center; /* Centre les éléments utilisateur */
+    width: 100%; /* Prend toute la largeur */
+  }
+}
