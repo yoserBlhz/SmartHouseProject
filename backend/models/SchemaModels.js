@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 // Schéma pour les appareils
 const AppareilSchema = new mongoose.Schema({
-    bouton: { type: Number, required: false }
+    bouton: { type: Number, required: false } ,
+    type:{type:String , required:false}
 });
 
 // Schéma pour HOME

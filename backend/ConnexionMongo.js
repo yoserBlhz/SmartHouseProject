@@ -1,25 +1,34 @@
-const express=require("express")
+const express = require("express");
 const mongoose = require('mongoose');
+const SignUpPath = require("./routes/SignUpRoute");
+const LoginPath = require("./routes/LoginRoute");
+const addRoomPath = require("./routes/AddRoom");
+const AddDevicePath=require("./routes/addDevice")
+// URI de connexion à MongoDB Atlas
+const uri = "mongodb+srv://jiji:jiji@smarthouse.1xebt.mongodb.net/smarthouse";
 
-const SignUpPAth=require("./routes/SignUpRoute")
-const LoginPath=require("./routes/LoginRoute")
-const addRoomPath=require("./routes/AddRoom")
+// Se connecter à MongoDB Atlas en utilisant Mongoose
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log("Connecté à la base de données MongoDB Atlas avec succès !");
+  })
+  .catch(err => {
+    console.error("Erreur de connexion à MongoDB Atlas : ", err);
+  });
 
+// Initialisation de l'application Express
+const app = express();
 
-mongoose.connect("mongodb://localhost/A")
-    .then(()=>console.log("connected to database hhhh"))
-    .catch((err)=>console.log("ERRROOOr",err))///RETOURNE PROMESSE 
-const app=express()
+app.use(express.json());
 
-app.use(express.json())
+// Définition des routes API
+app.use("/api/SignUp", SignUpPath);
+app.use("/api", LoginPath);
+app.use("/api", addRoomPath);
+app.use("/api", AddDevicePath);
 
-
-app.use("/api/SignUp",SignUpPAth)
-app.use("/api",LoginPath)
-
-app.use("/api",addRoomPath)
-
-const port =5000
-  
-
-app.listen(port, ()=>console.log("Server Running eyyyy!!"))
+// Configuration du port du serveur
+const port = 5000;
+app.listen(port, () => {
+  console.log("Server Running eyyyy!!");
+});
