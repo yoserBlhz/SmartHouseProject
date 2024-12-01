@@ -24,19 +24,19 @@ export class RoomComponent {
   rooms = [
     {
       name: 'Kitchen',
-      image: 'assets/bedroom.png',
+      image: 'assets/kitchen.jpg',
       description: '3 devices connected',
       buttonText: 'Show details'
     },
     {
       name: 'Living Room',
-      image: 'assets/bedroom.png',
+      image: 'assets/room.jpg',
       description: '5 devices connected',
       buttonText: 'Show details'
     },
     {
       name: 'Bedroom',
-      image: 'assets/bedroom.png',
+      image: 'assets/livingRoom.jpg',
       description: '2 devices connected',
       buttonText: 'Show details'
     }
