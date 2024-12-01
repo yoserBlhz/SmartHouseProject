@@ -1,0 +1,77 @@
+<div class="dynamic-bg">
+    <!-- Dashboard Section -->
+    <div class="dashboard">
+      <!-- Temperature, Humidity, and Gas Cards -->
+      <div class="card temperature-card">
+        <div class="temp-value">
+          <img src="/images/other/sun1.png" alt="Sun" class="temp-image" />
+          <span class="temperature-text">{{ temperature }}°C</span>
+        </div>
+        <div class="temp-title">
+          <span>Temperature</span>
+        </div>
+        <div class="temp-controls">
+          <img
+            src="images/other/add.png"
+            alt="Increase"
+            class="icon plus"
+            (click)="adjustTemperature(1)"
+          />
+          <img
+            src="images/other/minus-circle.png"
+            alt="Decrease"
+            class="icon minus"
+            (click)="adjustTemperature(-1)"
+          />
+        </div>
+      </div>
+  
+      <div class="card temperature-card">
+        <div class="temp-value">
+          <img src="/images/other/cloud.png" alt="Cloud" class="temp-image" />
+          <span class="temperature-text">{{ humidity }}%HR</span>
+        </div>
+        <div class="temp-title">
+          <span>Humidity</span>
+        </div>
+      </div>
+  
+      <div class="card temperature-card">
+        <div class="temp-value">
+          <img src="/images/other/heat.png" alt="Heat" class="temp-image" />
+          <span class="temperature-text">{{ gasLevel }} ppm</span>
+        </div>
+        <div class="temp-title">
+          <span>Gas</span>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Devices Section -->
+    <div class="devices-section">
+      <h2 class="devices-title">Devices</h2>
+      <div class="search-bar">
+        <input
+          type="text"
+          placeholder="Search devices..."
+          [(ngModel)]="searchQuery"
+          class="search-input"
+        />
+      </div>
+      <ul class="devices-list">
+        <li class="device-item" *ngFor="let device of filteredDevices">
+          <img [src]="device.image" [alt]="device.name" class="device-image" />
+          <span class="device-name">{{ device.name }}</span>
+          <button
+            class="toggle-button"
+            [class.on]="device.isOn"
+            [class.off]="!device.isOn"
+            (click)="toggleDevice(device)"
+          >
+            {{ device.isOn ? 'ON' : 'OFF' }}
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

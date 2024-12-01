@@ -1,0 +1,76 @@
+.room-image {
+    width: 100%; /* Assure que l'image s'ajuste à son conteneur */
+    display: block; /* Supprime les espaces blancs autour de l'image */
+  }
+  
+  .image-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%; /* Height of the box */
+    background-color: #4e5a9b7a; /* Solid blue background */
+    color: white; /* Text color */
+    text-align: center;
+    display: flex; /* Center content vertically and horizontally */
+    justify-content: center;
+    align-items: center;
+    font-size: 25px; /* Text size */
+    font-weight: normal; /* Text weight */
+    border-radius: 5px; /* Optional: rounded corners */
+    pointer-events: none; /* Make non-clickable (optional) */
+}
+  
+
+
+.card {
+  border: none;
+  border-radius: 12px;
+  background-color: #f8faff;
+  box-shadow: 0 4px 10px #383874;
+}
+
+.card-title {
+  font-size: 30px;
+  font-weight: normal;
+
+  color: #383874;
+}
+
+.table {
+  background-color: transparent;
+}
+
+.custom-table tbody tr {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.custom-table tbody tr td {
+  vertical-align: middle;
+  border-top: none;
+}
+
+.table-responsive {
+  border-radius: 10px;
+}
+
+img.rounded-circle {
+  border-radius: 50%;
+ 
+}
+
+.badge {
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
