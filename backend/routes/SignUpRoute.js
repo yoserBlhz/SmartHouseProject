@@ -44,7 +44,9 @@ router.post("/addAdmin",upload.single('image'),async (req,res)=>{
          userAdmin:req.body.username ,
          userAdminPassword:req.body.password,
          code:c ,
-         image:avatarPath,
+           
+         gender:req.body.gender ,
+
          email:req.body.email,
          otherUsers:[],
          HOME:[]

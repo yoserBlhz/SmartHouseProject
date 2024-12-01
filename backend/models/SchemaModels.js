@@ -25,7 +25,7 @@ const MainSchema = new mongoose.Schema({
     userAdmin: { type: String, required: true },
     userAdminPassword: { type: String, required: true },
     code: { type: String, required: true },
-    image: { type: String, required: true },
+    gender: { type: String, required: true },
     email: { type: String, required: true },
     otherUsers: [OtherUserSchema], // Tableau d'autres utilisateurs
     HOME: [HomeSchema] // Tableau de HOME
