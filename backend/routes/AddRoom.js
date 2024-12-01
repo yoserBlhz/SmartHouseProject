@@ -16,37 +16,55 @@ const storage = multer.diskStorage({
   });
 
 const upload = multer({ storage });
+ 
 
 
 
-
-// Route pour ajouter une room à l'utilisateur par son username
 R_AddRoom.post('/user/:username/add-room', async (req, res) => {
-    const username = req.params.username; // Récupérer le username à partir des paramètres de la requête
-    const name = req.body.name; 
-    const type=req.body.type ;
+  const username = req.params.username; // Nom de l'utilisateur
+  const { name, type, appareils } = req.body; // Extraction des données depuis req.body
 
-    const newRoom={name,type}
-    // Room envoyée dans le body de la requête
+  // Vérification des données
+  if (!name || !type || !Array.isArray(appareils)) {
+    return res.status(400).json({ message: "Les champs 'name', 'type' et 'appareils' sont requis." });
+  }
 
-    try {
-        // Trouver l'utilisateur par username et ajouter une room au tableau HOME
-        const user = await User.findOneAndUpdate(
-            { userAdmin: username }, // Recherche basée sur le username
-            { $push: { HOME: newRoom } }, // Ajouter la nouvelle room
-            { new: true } // Retourner l'utilisateur mis à jour
-        );
+  // Nouvelle room à ajouter
+  const newRoom = {
+    name,
+    type,
+    Appareils: appareils.map(appareil => ({
+      bouton:   0, // Valeur par défaut pour bouton
+      type: appareil.type,
+    })),
+  };
 
-        if (!user) {
-            return res.status(404).json({ message: "Utilisateur non trouvé" });
-        }
+  try {
+    // Rechercher l'utilisateur et ajouter la room
+    const user = await User.findOneAndUpdate(
+      { userAdmin: username }, // Critère de recherche
+      { $push: { HOME: newRoom } }, // Ajouter la nouvelle room
+      { new: true } // Retourner l'utilisateur mis à jour
+    );
 
-        res.status(200).json({ message: "Room ajoutée avec succès", user });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Erreur lors de l'ajout de la room" });
+    if (!user) {
+      return res.status(404).json({ message: "Utilisateur non trouvé." });
     }
+
+    res.status(200).json({ message: "Room ajoutée avec succès.", user });
+  } catch (error) {
+    console.error("Erreur lors de l'ajout de la room :", error);
+    res.status(500).json({ message: "Erreur serveur." });
+  }
 });
+
+
+
+
+
+
+
+
 
 module.exports = R_AddRoom;
  

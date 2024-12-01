@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const SignUpPath = require("./routes/SignUpRoute");
 const LoginPath = require("./routes/LoginRoute");
 const addRoomPath = require("./routes/AddRoom");
-const AddDevicePath=require("./routes/addDevice")
+const AddDevicePath=require("./routes/addDevice");
+const DeleteDevicePath=require("./routes/DeleteDevice")
 // URI de connexion à MongoDB Atlas
 const uri = "mongodb+srv://jiji:jiji@smarthouse.1xebt.mongodb.net/smarthouse";
 
@@ -26,6 +27,8 @@ app.use("/api/SignUp", SignUpPath);
 app.use("/api", LoginPath);
 app.use("/api", addRoomPath);
 app.use("/api", AddDevicePath);
+app.use("/api",DeleteDevicePath)
+
 
 // Configuration du port du serveur
 const port = 5000;
