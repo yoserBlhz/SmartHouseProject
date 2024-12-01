@@ -14,16 +14,8 @@ routeGETROOMS.get('/:username/getRooms', async (req, res) => {
     if (!user) {
       return res.status(404).json({ message: 'Utilisateur non trouvé.' });
     }
-
-    if (user && user.HOME) {
-        user.HOME = user.HOME.map((home) => {
-          delete home.Appareils; // Supprime le champ Appareils
-          delete home._id;       // Supprime le champ _id dans HOME
-          return home;
-        });
-      }
-      
-      console.log(user);
+   console.log(user)
+   
 
     // Retourner l'utilisateur avec uniquement les champs 'userAdmin' et 'image'
     res.status(200).json(user);
