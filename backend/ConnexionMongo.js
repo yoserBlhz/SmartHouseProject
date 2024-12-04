@@ -7,6 +7,7 @@ const AddDevicePath=require("./routes/addDevice");
 const DeleteDevicePath=require("./routes/DeleteDevice")
 const GetAdminPath=require("./routes/GetUserAdmin")
 const getRoomsPath=require("./routes/GetRooms")
+const getDevicesPath=require("./routes/GetDevices")
 // URI de connexion à MongoDB Atlas
 const uri = "mongodb+srv://jiji:jiji@smarthouse.1xebt.mongodb.net/smarthouse";
 
@@ -32,6 +33,7 @@ app.use("/api", AddDevicePath);
 app.use("/api",DeleteDevicePath)
 app.use("/api",GetAdminPath)
 app.use("/api", getRoomsPath)
+app.use("/api",getDevicesPath)
 
 
 // Configuration du port du serveur

@@ -1,16 +1,26 @@
 const express = require('express');
 const { User } = require('../models/SchemaModels.js'); // Importez votre modèle User
-const routeGetDevices = require('./GetDevices.js');
-const  routeGETROOMS = express.Router();
+const  routeGetDevices = express.Router();
 
 // Route pour récupérer un utilisateur par son nom d'admin
-routeGETROOMS.get('/:username/getRooms', async (req, res) => {
+routeGetDevices.get('/:username/:nameRoom/getRooms', async (req, res) => {
   const username = req.params.username; // Récupérer le nom d'utilisateur depuis les paramètres de la requête
+  const nameRoom=req.params.nameRoom ;
   //const room_name=req.body.room_name ;
 
   try {
-    // Trouver l'utilisateur par son nom d'admin (userAdmin) et sélectionner uniquement 'userAdmin' et 'image'
-    const user = await User.findOne({ userAdmin: username }).select('HOME -_id  ');
+    /* const user = await User.findOne( {userAdmin:username} ,// Chercher l'utilisateur dans la base
+        { 'HOME.name': nameRoom  }, // Filtre les documents où HOME.name est 'kitchen 1'
+        { 'HOME.Appareils': 1, _id: 1 } // Projection pour inclure uniquement HOME.Appareils et exclure _id
+      );*/
+      
+      const user = await User.findOne(
+        { userAdmin: username }, // Chercher l'utilisateur par son nom d'admin
+        {
+          'HOME.name':nameRoom 
+        }
+      )
+      .select('HOME.Appareils _id');
 
     if (!user) {
       return res.status(404).json({ message: 'Utilisateur non trouvé.' });
@@ -26,4 +36,4 @@ routeGETROOMS.get('/:username/getRooms', async (req, res) => {
   }
 });
 
-module.exports =routeGETROOMS;
+module.exports =   routeGetDevices;
