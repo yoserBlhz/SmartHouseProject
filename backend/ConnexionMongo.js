@@ -1,13 +1,43 @@
 const express = require("express");
 const mongoose = require('mongoose');
+const session = require('express-session'); // Assurez-vous d'avoir importé express-session
 const SignUpPath = require("./routes/SignUpRoute");
 const LoginPath = require("./routes/LoginRoute");
 const addRoomPath = require("./routes/AddRoom");
-const AddDevicePath=require("./routes/addDevice");
-const DeleteDevicePath=require("./routes/DeleteDevice")
-const GetAdminPath=require("./routes/GetUserAdmin")
-const getRoomsPath=require("./routes/GetRooms")
-const getDevicesPath=require("./routes/GetDevices")
+const AddDevicePath = require("./routes/addDevice");
+const DeleteDevicePath = require("./routes/DeleteDevice");
+const GetAdminPath = require("./routes/GetUserAdmin");
+const getRoomsPath = require("./routes/GetRooms");
+const getDevicesPath = require("./routes/GetDevices");
+const SerachRoomPath = require("./routes/SearchRoom");
+const addOtherUsers=require("./routes/AddOtherUsers")
+const getCodePath=require("./routes/GetCode")
+const path = require('path');
+// Initialisation de l'application Express
+const app = express();
+const cors = require('cors');
+//app.use(express.static(path.join(__dirname, 'public')));  
+
+// Configurer la session
+app.use(session({
+  secret: 'your-secret-key', // Clé secrète pour signer la session
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } // Si vous ne travaillez pas avec HTTPS, mettez secure à false
+}));
+
+// Middleware pour servir les fichiers statiques (HTML, JS, etc.)
+app.use(express.static('public')); // Si vos fichiers frontend sont dans un dossier 'public'
+
+// Middleware pour parser les données JSON
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors({
+  origin: 'http://localhost:3000',  // Autorise les requêtes depuis localhost:3000 (frontend)
+  methods: 'GET,POST',              // Méthodes autorisées
+  allowedHeaders: 'Content-Type'    // Entêtes autorisés
+}));
+
 // URI de connexion à MongoDB Atlas
 const uri = "mongodb+srv://jiji:jiji@smarthouse.1xebt.mongodb.net/smarthouse";
 
@@ -20,22 +50,18 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     console.error("Erreur de connexion à MongoDB Atlas : ", err);
   });
 
-// Initialisation de l'application Express
-const app = express();
-
-app.use(express.json());
-
 // Définition des routes API
 app.use("/api/SignUp", SignUpPath);
 app.use("/api", LoginPath);
 app.use("/api", addRoomPath);
 app.use("/api", AddDevicePath);
-app.use("/api",DeleteDevicePath)
-app.use("/api",GetAdminPath)
-app.use("/api", getRoomsPath)
-app.use("/api",getDevicesPath)
-
-
+app.use("/api", DeleteDevicePath);
+app.use("/api", GetAdminPath);
+app.use("/api", getRoomsPath);
+app.use("/api", getDevicesPath);
+app.use("/api", SerachRoomPath);
+app.use("/api",addOtherUsers)
+app.use("/api",getCodePath)
 // Configuration du port du serveur
 const port = 5000;
 app.listen(port, () => {
