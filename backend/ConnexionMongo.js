@@ -17,7 +17,7 @@ const path = require('path');
 const app = express();
 const cors = require('cors');
 //app.use(express.static(path.join(__dirname, 'public')));  
-
+app.use(cors());
 // Configurer la session
 app.use(session({
   secret: 'your-secret-key', // Clé secrète pour signer la session
@@ -33,7 +33,7 @@ app.use(express.static('public')); // Si vos fichiers frontend sont dans un doss
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: 'http://localhost:3000',  // Autorise les requêtes depuis localhost:3000 (frontend)
+  origin: 'http://localhost:4200',  // Autorise les requêtes depuis localhost:3000 (frontend)
   methods: 'GET,POST',              // Méthodes autorisées
   allowedHeaders: 'Content-Type'    // Entêtes autorisés
 }));
@@ -51,7 +51,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   });
 
 // Définition des routes API
-app.use("/api/SignUp", SignUpPath);
+app.use("/api", SignUpPath);
 app.use("/api", LoginPath);
 app.use("/api", addRoomPath);
 app.use("/api", AddDevicePath);

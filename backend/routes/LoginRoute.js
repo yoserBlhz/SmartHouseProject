@@ -17,7 +17,10 @@ try{
       return res.status(404).json({ message: 'Utilisateur non trouvé.' });
     }
 
-    res.status(200).json({ message: 'Connexion réussie upppppp.' });
+    res.status(200).json({ message: 'Connexion réussie upppppp.',
+        code: user.code,
+        username: userAdmin
+     });
 
 
 }catch(error){

@@ -28,7 +28,8 @@ const MainSchema = new mongoose.Schema({
     gender: { type: String, required: true },
     email: { type: String, required: true },
     otherUsers: [OtherUserSchema], // Tableau d'autres utilisateurs
-    HOME: [HomeSchema] // Tableau de HOME
+    HOME: [HomeSchema], // Tableau de HOME
+    avatar: { type: String }
 });
 
 // Modèle Mongoose

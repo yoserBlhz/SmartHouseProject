@@ -20,8 +20,9 @@ const upload = multer({ storage });
 
 
 
-R_AddRoom.post('/user/:username/add-room', async (req, res) => {
-  const username = req.params.username; // Nom de l'utilisateur
+R_AddRoom.post('/user/:code/:username/add-room', async (req, res) => {
+  const code = req.params.code;
+  const username=req.params.username; // Nom de l'utilisateur
   const { name, type, appareils } = req.body; // Extraction des données depuis req.body
 
   // Vérification des données
@@ -42,7 +43,7 @@ R_AddRoom.post('/user/:username/add-room', async (req, res) => {
   try {
     // Rechercher l'utilisateur et ajouter la room
     const user = await User.findOneAndUpdate(
-      { userAdmin: username }, // Critère de recherche
+      { userAdmin: username, code: code }, // Critère de recherche
       { $push: { HOME: newRoom } }, // Ajouter la nouvelle room
       { new: true } // Retourner l'utilisateur mis à jour
     );

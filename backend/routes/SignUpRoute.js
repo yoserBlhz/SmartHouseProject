@@ -35,32 +35,78 @@ function generateRandomCode(length = 6) {
 }
 
 
-router.post("/addAdmin",upload.single('image'),async (req,res)=>{
-  try{
-     const c=generateRandomCode(6)
-     const avatarPath = req.file ? `uploads/${req.file.filename}` : 'uploads/avatarDef.jpg';
-     const auth=new User({
-         //id:Authors.length+1,
-         userAdmin:req.body.username ,
-         userAdminPassword:req.body.password,
-         code:c ,
-           
-         gender:req.body.gender ,
+// router.post("/addAdmin",upload.single('image'),async (req,res)=>{
+//   try{
+//      const c=generateRandomCode(6)
+//     const avatarPath = req.file ? `uploads/${req.file.filename}` : 'uploads/avatarDef.jpg';
 
-         email:req.body.email,
-         otherUsers:[],
-         HOME:[]
+//      const auth=new User({
+//          //id:Authors.length+1,
+//          userAdmin:req.body.username ,
+//          userAdminPassword:req.body.password,
+//          code:c ,
+           
+//          gender:req.body.gender ,
+
+//          email:req.body.email,
+//          otherUsers:[],
+//          HOME:[]
        
-     })
+//      })
      
-     const result=await auth.save()
+//      const result=await auth.save()
  
-     res.status(201).json(result);
- }
- catch(err){
-     console.log(err)
-     res.status(500).json({message:"Erreur lors de saving !!!"})
- }    
- })
+//      res.status(201).json(result);
+//  }
+//  catch(err){
+//      console.log(err)
+//      res.status(500).json({message:"Erreur lors de saving !!!"})
+//  }    
+//  })
+
+
+
+
+router.post("/addAdmin", async (req, res) => {
+  try {
+    const c = generateRandomCode(6);
+
+    let avatarPath;
+    if (req.body.gender === 'Male') {
+      avatarPath = 'assets/maleAvatar.jpg'; 
+    } else if (req.body.gender === 'Female') {
+      avatarPath = 'assets/femaleAvatar.jpg'; 
+    }
+
+    const auth = new User({
+      userAdmin: req.body.username,
+      userAdminPassword: req.body.password,
+      code: c,
+      gender: req.body.gender,
+      email: req.body.email,
+      otherUsers: [],
+      HOME: [],
+      avatar: avatarPath 
+    });
+
+    const result = await auth.save();
+
+    res.status(201).json(result);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: "Erreur lors de saving !!!" });
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
  
 module.exports=router;

@@ -3,8 +3,9 @@ const mongoose = require('mongoose');
 const R_AddOthersUser = express.Router();
 const { User } = require('../models/SchemaModels.js'); // Assurez-vous que le modèle User est bien importé
 
-R_AddOthersUser.post('/:username/addOtherUsers', async (req, res) => {
+R_AddOthersUser.post('/:code/:username/addOtherUsers', async (req, res) => {
   const username = req.params.username; // Nom de l'utilisateur admin
+  const code =req.params.code; 
   const { name } = req.body; // Extraction spécifique du champ 'name' du corps de la requête
   
   // Vérification de la présence du nom dans la requête
@@ -15,7 +16,7 @@ R_AddOthersUser.post('/:username/addOtherUsers', async (req, res) => {
   try {
     // Recherche de l'utilisateur et ajout du nouvel utilisateur à la liste 'otherUsers'
     const user = await User.findOneAndUpdate(
-      { userAdmin: username }, // Critère de recherche basé sur l'username
+      { code:code, userAdmin: username }, // Critère de recherche basé sur l'username
       {
         $push: {
           otherUsers: {

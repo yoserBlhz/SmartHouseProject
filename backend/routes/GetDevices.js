@@ -3,13 +3,15 @@ const { User } = require('../models/SchemaModels.js'); // Importez votre modèle
 const routeGetDevices = express.Router();
 
 // Route pour récupérer un utilisateur par son nom d'admin
-routeGetDevices.get('/:username/:nameRoom/getDevices', async (req, res) => {
+routeGetDevices.get('/:code/:username/:nameRoom/getDevices', async (req, res) => {
   const username = req.params.username; // Récupérer le nom d'utilisateur depuis les paramètres de la requête
   const nameRoom = req.params.nameRoom; // Récupérer le nom de la pièce (room)
+  const code = req.params.code;
+
 
   try {
     const pipeline = [
-      { $match: { userAdmin: username, "HOME.name": nameRoom } },
+      { $match: { code:code, userAdmin: username, "HOME.name": nameRoom } },
       {
         $project: {
           _id: 0,
