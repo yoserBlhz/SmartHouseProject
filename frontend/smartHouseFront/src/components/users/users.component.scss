@@ -1,0 +1,73 @@
+.dashboard-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .main-container {
+    display: flex;
+    flex: 1;
+  }
+  
+  .app-sidebar {
+    width: 70px; /* ou selon la largeur de votre sidebar */
+    background-color: #f4f4f4;
+  }
+  
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+  }
+  
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .user-container {
+    display: flex;
+    justify-content: center; /* Centre le contenu */
+    align-items: center; /* Centre verticalement */
+    flex: 1;
+    margin-top: 10px; /* Ajoute un petit espace entre "Your Rooms" et les images */
+  }
+  
+  
+  
+  
+  .add-user-section {
+    display: flex;
+    justify-content: flex-end; /* Positionne le bouton à gauche */
+    margin-bottom: 20px; /* Espace entre le bouton et la liste des rooms */
+  }
+  
+  .add-user-btn {
+    background-color: #34495e; /* Couleur Bootstrap */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .add-user-btn:hover {
+    background-color: #394e63;
+  }
+  
+  
+  
+  .btn-custom {
+    background-color: #394e63; 
+    color: white; /* Couleur du texte */
+    border: none;
+  }
+  
+  .btn-custom2 {
+    background-color: #4d6782; /* Couleur au survol */
+    color: white; /* Couleur du texte */
+    border: none;
+  }
