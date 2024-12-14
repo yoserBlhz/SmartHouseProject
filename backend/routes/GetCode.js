@@ -1,16 +1,16 @@
 const express = require('express');
 const { User } = require('../models/SchemaModels.js'); // Importez votre modèle User
-const routeGetDevices = require('./GetDevices.js');
-const  routeGETROOMS = express.Router();
+ 
+const  routeGetCode = express.Router();
 
 // Route pour récupérer un utilisateur par son nom d'admin
-routeGETROOMS.get('/:username/getRooms', async (req, res) => {
+routeGetCode.get('/:username/getCode', async (req, res) => {
   const username = req.params.username; // Récupérer le nom d'utilisateur depuis les paramètres de la requête
   //const room_name=req.body.room_name ;
 
   try {
     // Trouver l'utilisateur par son nom d'admin (userAdmin) et sélectionner uniquement 'userAdmin' et 'image'
-    const user = await User.find({ userAdmin: username }).select('HOME.name HOME.type -_id   ');
+    const user = await User.find({ userAdmin: username } , {code :1 , _id:0}) 
 
     if (!user) {
       return res.status(404).json({ message: 'Utilisateur non trouvé.' });
@@ -26,4 +26,4 @@ routeGETROOMS.get('/:username/getRooms', async (req, res) => {
   }
 });
 
-module.exports =routeGETROOMS;
+module.exports =routeGetCode;

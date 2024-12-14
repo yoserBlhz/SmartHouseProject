@@ -17,7 +17,7 @@ const HomeSchema = new mongoose.Schema({
 // Schéma pour les utilisateurs secondaires (otherUsers)
 const OtherUserSchema = new mongoose.Schema({
     username: { type: String, required: false },
-    image: { type: String, required: false }
+    
 });
 
 // Schéma principal
