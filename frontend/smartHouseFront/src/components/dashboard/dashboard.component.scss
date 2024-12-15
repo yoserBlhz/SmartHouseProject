@@ -1,7 +1,90 @@
+// .dashboard-layout {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100vh;
+// }
+
+// .main-container {
+//   display: flex;
+//   flex: 1;
+// }
+
+// .app-sidebar {
+//   width: 70px; /* ou selon la largeur de votre sidebar */
+//   background-color: #f4f4f4;
+// }
+
+// .main-content {
+//   display: flex;
+//   flex-direction: column;
+//   flex: 1;
+//   padding: 20px;
+// }
+
+// .title {
+//   font-size: 24px;
+//   font-weight: bold;
+//   color: #333;
+// }
+
+// .room-container {
+//   display: flex;
+//   justify-content: center; /* Centre le contenu */
+//   align-items: center; /* Centre verticalement */
+//   flex: 1;
+//   margin-top: 10px; /* Ajoute un petit espace entre "Your Rooms" et les images */
+// }
+
+
+
+
+// .add-room-section {
+//   display: flex;
+//   justify-content: flex-end; /* Positionne le bouton à gauche */
+//   margin-bottom: 20px; /* Espace entre le bouton et la liste des rooms */
+// }
+
+// .add-room-btn {
+//   background-color: #34495e; /* Couleur Bootstrap */
+//   color: white;
+//   border: none;
+//   padding: 10px 15px;
+//   font-size: 16px;
+//   cursor: pointer;
+//   border-radius: 4px;
+// }
+
+// .add-room-btn:hover {
+//   background-color: #394e63;
+// }
+
+
+
+// .btn-custom {
+//   background-color: #394e63; 
+//   color: white; /* Couleur du texte */
+//   border: none;
+// }
+
+// .btn-custom2 {
+//   background-color: #4d6782; /* Couleur au survol */
+//   color: white; /* Couleur du texte */
+//   border: none;
+// }
+
+
+
 .dashboard-layout {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  transition: margin-left 0.3s;
+
+  &.sidebar-closed {
+    @media (min-width: 769px) {
+      margin-left: 70px;
+    }
+  }
 }
 
 .main-container {
@@ -10,64 +93,54 @@
 }
 
 .app-sidebar {
-  width: 70px; /* ou selon la largeur de votre sidebar */
-  background-color: #f4f4f4;
+  flex-shrink: 0;
 }
 
 .main-content {
-  display: flex;
-  flex-direction: column;
   flex: 1;
   padding: 20px;
+  transition: margin-left 0.3s;
 }
-
-.title {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-}
-
-.room-container {
-  display: flex;
-  justify-content: center; /* Centre le contenu */
-  align-items: center; /* Centre verticalement */
-  flex: 1;
-  margin-top: 10px; /* Ajoute un petit espace entre "Your Rooms" et les images */
-}
-
-
-
 
 .add-room-section {
   display: flex;
-  justify-content: flex-end; /* Positionne le bouton à gauche */
-  margin-bottom: 20px; /* Espace entre le bouton et la liste des rooms */
+  justify-content: flex-end;
+  margin-bottom: 20px;
 }
 
 .add-room-btn {
-  background-color: #34495e; /* Couleur Bootstrap */
+  background-color: #34495e;
   color: white;
   border: none;
   padding: 10px 15px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
+
+  &:hover {
+    background-color: #394e63;
+  }
 }
-
-.add-room-btn:hover {
-  background-color: #394e63;
-}
-
-
 
 .btn-custom {
-  background-color: #394e63; 
-  color: white; /* Couleur du texte */
+  background-color: #394e63;
+  color: white;
   border: none;
 }
 
 .btn-custom2 {
-  background-color: #4d6782; /* Couleur au survol */
-  color: white; /* Couleur du texte */
+  background-color: #4d6782;
+  color: white;
   border: none;
 }
+
+@media (max-width: 768px) {
+  .dashboard-layout {
+    margin-left: 0 !important;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+  }
+}
+

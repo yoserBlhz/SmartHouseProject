@@ -1,51 +1,4 @@
-<!-- <div class="d-flex flex-column flex-shrink-0 p-3 sidebar" [class.closed]="isSidebarClosed">
-    <button class="toggle-btn" (click)="toggleSidebar()">
-      <i class="bi bi-list icon"></i>
-      <span *ngIf="!isSidebarClosed">Toggle Sidebar</span>
-    </button>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="/home" class="nav-link" aria-current="page">
-          <i class="bi bi-house-door icon"></i>
-          <span *ngIf="!isSidebarClosed">Home</span>
-        </a>
-      </li>
-      <li>
-        <a href="/devices" class="nav-link link-dark">
-          <i class="bi bi-phone-vibrate"></i>
-          <span *ngIf="!isSidebarClosed">Devices</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="/users" class="nav-link link-dark">
-          <i class="bi bi-people icon"></i>
-          <span *ngIf="!isSidebarClosed"> Users</span>
-        </a>
-      </li>
-      <li>
-        <a href="/rapport"  class="nav-link link-dark">
-          <i class="bi bi-file-earmark-text icon"></i>
-          <span *ngIf="!isSidebarClosed">Rapport</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="/"  class="nav-link link-dark">
-          <i class="bi bi-bell"></i>
-          <span *ngIf="!isSidebarClosed" >Notifications</span>
-        </a>
-      </li>
-    </ul>
-  </div>  
-
-  -->
-
-
-
-
-
-  <div class="sidebar" [class.collapsed]="isSidebarClosed">
+  <!-- <div class="sidebar" [class.collapsed]="isSidebarClosed">
     <div class="sidebar-toggle" (click)="toggleSidebar()">
       <i class="bi bi-menu-button icon"></i>
 
@@ -83,6 +36,88 @@
     </nav>
   </div>
   </div>
-  
+   -->
 
-  <!-- edhe cmnt bch ijik -->
+<!-- 
+
+
+<button class="mobile-toggle" (click)="toggleSidebar()">
+  <i class="bi" [ngClass]="{'bi-list': isSidebarClosed, 'bi-x': !isSidebarClosed}"></i>
+</button>
+<div class="sidebar-overlay" (click)="toggleSidebar()"></div>
+<div class="sidebar" [class.collapsed]="isSidebarClosed" [class.sidebar-visible]="!isSidebarClosed">
+  <div class="sidebar-toggle" (click)="toggleSidebar()">
+    <i class="bi" [ngClass]="{'bi-chevron-left': !isSidebarClosed, 'bi-chevron-right': isSidebarClosed}"></i>
+  </div>
+  <div class="menu-items">
+    <nav>
+      <a href="/home" [class.active]="currentRoute === '/home'">
+        <i class="bi bi-house-door icon"></i>
+        <span>Home</span>
+      </a>
+      <a routerLink="/devices" [class.active]="currentRoute === '/devices'">
+        <i class="bi bi-phone-vibrate"></i>
+        <span>Devices</span>
+      </a>
+      <a href="/users" [class.active]="currentRoute === '/users'">
+        <i class="bi bi-people icon"></i>
+        <span>Users</span>
+      </a>
+      <a routerLink="/reports" [class.active]="currentRoute === '/reports'">
+        <i class="bi bi-file-earmark-text icon"></i>
+        <span>Reports</span>
+      </a>
+      <a routerLink="/notifications" [class.active]="currentRoute === '/notifications'">
+        <i class="bi bi-bell"></i>
+        <span>Notifications</span>
+      </a>
+      <a routerLink="/logout" [class.active]="currentRoute === '/logout'">
+        <i class="bi bi-box-arrow-left"></i>
+        <span>Logout</span>
+      </a>
+    </nav>
+  </div>
+</div>
+ -->
+
+
+
+
+ <button class="mobile-toggle" (click)="toggleSidebar()">
+  <i class="bi" [ngClass]="{'bi-list': isSidebarClosed, 'bi-x': !isSidebarClosed}"></i>
+</button>
+<div class="sidebar-overlay" (click)="toggleSidebar()" *ngIf="!isSidebarClosed && isMobile"></div>
+<div class="sidebar" [class.collapsed]="isSidebarClosed" [class.sidebar-visible]="!isSidebarClosed || !isMobile">
+  <div class="sidebar-toggle" (click)="toggleSidebar()">
+    <i class="bi" [ngClass]="{'bi-chevron-left': !isSidebarClosed, 'bi-chevron-right': isSidebarClosed}"></i>
+  </div>
+  <div class="menu-items">
+    <nav>
+      <a href="/home" [class.active]="currentRoute === '/home'">
+        <i class="bi bi-house-door icon"></i>
+        <span>Home</span>
+      </a>
+      <a routerLink="/devices" [class.active]="currentRoute === '/devices'">
+        <i class="bi bi-phone-vibrate"></i>
+        <span>Devices</span>
+      </a>
+      <a href="/users" [class.active]="currentRoute === '/users'">
+        <i class="bi bi-people icon"></i>
+        <span>Users</span>
+      </a>
+      <a routerLink="/reports" [class.active]="currentRoute === '/reports'">
+        <i class="bi bi-file-earmark-text icon"></i>
+        <span>Reports</span>
+      </a>
+      <a routerLink="/notifications" [class.active]="currentRoute === '/notifications'">
+        <i class="bi bi-bell"></i>
+        <span>Notifications</span>
+      </a>
+      <a routerLink="/logout" [class.active]="currentRoute === '/logout'">
+        <i class="bi bi-box-arrow-left"></i>
+        <span>Logout</span>
+      </a>
+    </nav>
+  </div>
+</div>
+

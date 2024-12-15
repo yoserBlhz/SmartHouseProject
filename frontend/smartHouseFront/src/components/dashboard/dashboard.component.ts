@@ -20,10 +20,12 @@ declare var bootstrap: any;
 })
 export class DashboardComponent implements OnInit {
   isSidebarClosed = false;
+  rooms: any[] = [];
 
   handleSidebarToggle(isClosed: boolean) {
     this.isSidebarClosed = isClosed;
   }
+
   roomForm!: FormGroup;
   userInfo: { code: string, username: string } | null = null;
   @ViewChild('addRoomModal') addRoomModal!: ElementRef;
@@ -65,6 +67,8 @@ export class DashboardComponent implements OnInit {
         this.userInfo = userInfo;
         if (!userInfo) {
           this.router.navigate(['/login']);
+        }else{
+          this.loadRooms();
         }
       });
     }
@@ -89,6 +93,7 @@ export class DashboardComponent implements OnInit {
             document.getElementById('addRoomModal')?.classList.remove('show');
             document.body.classList.remove('modal-open');
             document.querySelector('.modal-backdrop')?.remove();
+            this.loadRooms();
           },
           error: (error) => {
             console.error('Error adding room', error);
@@ -97,6 +102,19 @@ export class DashboardComponent implements OnInit {
       }
     }
 
+
+    loadRooms() {
+      if (this.userInfo) {
+        this.roomService.getRooms(this.userInfo.code, this.userInfo.username).subscribe({
+          next: (rooms) => {
+            this.rooms = rooms;
+          },
+          error: (error) => {
+            console.error('Error loading rooms', error);
+          }
+        });
+      }
+    }
 
 
 

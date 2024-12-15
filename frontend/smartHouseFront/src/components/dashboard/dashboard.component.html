@@ -1,4 +1,4 @@
- <div class="dashboard-layout">
+ <!-- <div class="dashboard-layout">
       <app-navbar></app-navbar>
       <div class="main-container">
 
@@ -14,9 +14,22 @@
           </div>
         </div>
       </div>
+ -->
 
-
-
+ <div class="dashboard-layout" [class.sidebar-closed]="isSidebarClosed">
+  <app-navbar></app-navbar>
+  <div class="main-container">
+    <app-sidebar class="app-sidebar" (sidebarToggled)="handleSidebarToggle($event)"></app-sidebar>
+    <div class="main-content">
+      <div class="add-room-section">
+        <button type="button" class="add-room-btn" data-bs-toggle="modal" data-bs-target="#addRoomModal">
+          <i class="bi bi-plus"></i>Add Room
+        </button>
+      </div>
+      <app-room></app-room>
+    </div>
+  </div>
+</div>
 
 
 <!-- Add Room Model -->

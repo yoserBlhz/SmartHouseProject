@@ -11,7 +11,7 @@ export const routes: Routes = [
     {path: '',component: WelcomePageComponent},
     {path: 'signup',component: SignupComponent},
     {path: 'login',component: SigninComponent},
-    {path: 'users',component:UsersComponent}
+    {path: 'users',component:UsersComponent},
 
 
 ];
