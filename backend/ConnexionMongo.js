@@ -17,6 +17,10 @@ const deleteOtherUser=require("./routes/DeleteOtherUser");
 
 const getCodePath=require("./routes/GetCode")
 const path = require('path');
+
+
+const dataRoutes = require('./routes/data');
+
 // Initialisation de l'application Express
 const app = express();
 const cors = require('cors');
@@ -70,6 +74,7 @@ app.use("/api",editOtherUser);
 app.use("/api",deleteOtherUser);
 
 app.use("/api",getCodePath)
+app.use('/data', dataRoutes);
 // Configuration du port du serveur
 const port = 5000;
 app.listen(port, () => {
