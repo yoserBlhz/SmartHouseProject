@@ -10,7 +10,11 @@ const GetAdminPath = require("./routes/GetUserAdmin");
 const getRoomsPath = require("./routes/GetRooms");
 const getDevicesPath = require("./routes/GetDevices");
 const SerachRoomPath = require("./routes/SearchRoom");
-const addOtherUsers=require("./routes/AddOtherUsers")
+const addOtherUsers=require("./routes/AddOtherUsers");
+const getOtherUsers=require("./routes/GetOtherUsers");
+const editOtherUser=require("./routes/editOtherUser");
+const deleteOtherUser=require("./routes/DeleteOtherUser");
+
 const getCodePath=require("./routes/GetCode")
 const getOtherUsers=require("./routes/GetOtherUsers")
 const editOtherUser=require("./routes/editOtherUser")

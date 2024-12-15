@@ -85,10 +85,45 @@
     border-bottom: 1px solid #eee;
   }
   
+
+  
+  
+
+// .user-management-container {
+//     max-width: 1000px;
+//     margin: 10px;
+//     padding: 5px ;
+//   }
+
+
+  
+  .add-user-section {
+    margin-bottom: 20px;
+  }
+  
+  .user-list {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+  }
+ 
+  .user-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #dee2e6;
+  
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
   .user-actions {
     button {
       margin-left: 10px;
     }
   }
   
+
   

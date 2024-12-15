@@ -2,8 +2,9 @@ const express = require('express');
 const { User } = require('../models/SchemaModels.js');
 const routeDeleteUser = express.Router();
 
-routeDeleteUser.delete('/:code/:username/deleteOtherUser/:userId', async (req, res) => {
-  const { code, username, userId } = req.params;
+
+routeDeleteUser.delete('/:code/:username/deleteOtherUser/:Name', async (req, res) => {
+  const { code, username, Name } = req.params;
 
   try {
     const user = await User.findOne({ userAdmin: username, code: code });
@@ -12,7 +13,7 @@ routeDeleteUser.delete('/:code/:username/deleteOtherUser/:userId', async (req, r
       return res.status(404).json({ message: 'User not found.' });
     }
 
-    user.otherUsers = user.otherUsers.filter(u => u._id.toString() !== userId);
+    user.otherUsers = user.otherUsers.filter(u => u.username.toString() !== Name);
     await user.save();
 
     res.status(200).json({ message: 'User deleted successfully.' });
