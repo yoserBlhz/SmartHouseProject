@@ -12,6 +12,10 @@ const getDevicesPath = require("./routes/GetDevices");
 const SerachRoomPath = require("./routes/SearchRoom");
 const addOtherUsers=require("./routes/AddOtherUsers")
 const getCodePath=require("./routes/GetCode")
+const getOtherUsers=require("./routes/GetOtherUsers")
+const editOtherUser=require("./routes/editOtherUser")
+const deleteOtherUser=require("./routes/DeleteOtherUser")
+
 const path = require('path');
 // Initialisation de l'application Express
 const app = express();
@@ -60,7 +64,11 @@ app.use("/api", GetAdminPath);
 app.use("/api", getRoomsPath);
 app.use("/api", getDevicesPath);
 app.use("/api", SerachRoomPath);
-app.use("/api",addOtherUsers)
+app.use("/api",addOtherUsers);
+app.use("/api",getOtherUsers);
+app.use("/api",editOtherUser);
+app.use("/api",deleteOtherUser);
+
 app.use("/api",getCodePath)
 // Configuration du port du serveur
 const port = 5000;
