@@ -17,7 +17,7 @@ const HomeSchema = new mongoose.Schema({
 // Schéma pour les utilisateurs secondaires (otherUsers)
 const OtherUserSchema = new mongoose.Schema({
     username: { type: String, required: false },
-    image: { type: String, required: false }
+    
 });
 
 // Schéma principal
@@ -25,10 +25,11 @@ const MainSchema = new mongoose.Schema({
     userAdmin: { type: String, required: true },
     userAdminPassword: { type: String, required: true },
     code: { type: String, required: true },
-    image: { type: String, required: true },
+    gender: { type: String, required: true },
     email: { type: String, required: true },
     otherUsers: [OtherUserSchema], // Tableau d'autres utilisateurs
-    HOME: [HomeSchema] // Tableau de HOME
+    HOME: [HomeSchema], // Tableau de HOME
+    avatar: { type: String }
 });
 
 // Modèle Mongoose

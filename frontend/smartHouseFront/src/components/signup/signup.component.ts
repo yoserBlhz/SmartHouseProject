@@ -1,12 +1,54 @@
+
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthService } from '../../Services/auth.service';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [],
+  providers: [AuthService],  
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.scss'
+  styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent {
+  signupForm: FormGroup;
 
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
+    this.signupForm = this.fb.group({
+      username: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      gender: ['', Validators.required],
+    });
+  }
+
+  onSignUp(): void {
+    if (this.signupForm.valid) {
+      console.log("hey");
+      const formData = this.signupForm.value; 
+      console.log(formData);
+      this.authService.signup(formData).subscribe({
+        next: (response) => {
+          console.log('Signup successful:', response);
+          alert('Account created successfully!');
+          this.router.navigate(['/login']);
+        },
+        error: (error) => {
+          console.error('Signup error:', error);
+          alert('An error occurred during signup. Please try again.');
+        },
+      });
+    } else {
+      alert('Please fill in all required fields correctly.');
+    }
+  }
+  
 }
