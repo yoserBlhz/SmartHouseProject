@@ -1,36 +1,39 @@
-<div class="dashboard-layout">
+<!-- <div class="dashboard-layout">
   <app-navbar></app-navbar>
   <div class="main-container">
-
     <app-sidebar class="app-sidebar"></app-sidebar>
-
     <div class="main-content">
       <div class="add-user-section">
         <button type="button" class="add-user-btn" data-bs-toggle="modal" data-bs-target="#addUserModal">
           <i class="bi bi-plus"></i>Add User
         </button>
       </div>
+      
+      <div class="user-list">
+        <div class="user-item" *ngFor="let user of users">
+          <span>{{ user.username }}</span>
+          <div class="user-actions">
+            <button class="btn btn-sm btn-primary" (click)="editUser(user)" data-bs-toggle="modal" data-bs-target="#editUserModal">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteUser(user._id)">Delete</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
 
-
-
-  
-<!-- Add USer Model -->
-<div class="modal fade" tabindex="-1" role="dialog" id="addUserModal">
+<div class="modal fade" #addUserModal tabindex="-1" role="dialog" id="addUserModal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"><i class="bi bi-house-add"></i>Add User</h5>
+        <h5 class="modal-title"><i class="bi bi-person-plus"></i>Add User</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form [formGroup]="userForm">
-          <!-- Room Name -->
           <div class="mb-3">
             <label for="userName" class="form-label">User Name</label>
-            <input type="text" id="userNAme" class="form-control" formControlName="name" placeholder="Enter user name">
+            <input type="text" id="userName" class="form-control" formControlName="name" placeholder="Enter user name">
           </div>
         </form>
       </div>
@@ -41,3 +44,104 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" #editUserModal tabindex="-1" role="dialog" id="editUserModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-person-gear"></i>Edit User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="editForm">
+          <div class="mb-3">
+            <label for="editUserName" class="form-label">User Name</label>
+            <input type="text" id="editUserName" class="form-control" formControlName="name" placeholder="Enter user name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-custom" (click)="saveEditedUser()">Save Changes</button>
+        <button type="button" class="btn btn-custom2" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ -->
+ <div class="dashboard-layout">
+  <app-navbar></app-navbar>
+  <div class="main-container">
+    <app-sidebar class="app-sidebar"></app-sidebar>
+    <div class="main-content">
+      <div class="add-user-section">
+        <button type="button" class="add-user-btn" data-bs-toggle="modal" data-bs-target="#addUserModal">
+          <i class="bi bi-plus"></i>Add User
+        </button>
+      </div>
+      
+      <!-- User List -->
+      <div class="user-list">
+        <div class="user-item" *ngFor="let user of users">
+          <span>{{ user.username }}</span>
+          <div class="user-actions">
+            <button class="btn btn-sm btn-primary" (click)="editUser(user)" data-bs-toggle="modal" data-bs-target="#editUserModal">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteUser(user._id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add User Modal -->
+<div class="modal fade" #addUserModal tabindex="-1" role="dialog" id="addUserModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-person-plus"></i>Add User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="userForm">
+          <div class="mb-3">
+            <label for="userName" class="form-label">User Name</label>
+            <input type="text" id="userName" class="form-control" formControlName="name" placeholder="Enter user name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-custom" (click)="saveUser()">Save User</button>
+        <button type="button" class="btn btn-custom2" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit User Modal -->
+<div class="modal fade" #editUserModal tabindex="-1" role="dialog" id="editUserModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-person-gear"></i>Edit User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="editForm">
+          <div class="mb-3">
+            <label for="editUserName" class="form-label">User Name</label>
+            <input type="text" id="editUserName" class="form-control" formControlName="name" placeholder="Enter user name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-custom" (click)="saveEditedUser()">Save Changes</button>
+        <button type="button" class="btn btn-custom2" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+ 

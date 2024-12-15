@@ -71,3 +71,24 @@
     color: white; /* Couleur du texte */
     border: none;
   }
+
+
+  .user-list {
+    margin-top: 20px;
+  }
+  
+  .user-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .user-actions {
+    button {
+      margin-left: 10px;
+    }
+  }
+  
+  
