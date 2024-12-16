@@ -16,6 +16,14 @@ const editOtherUser=require("./routes/editOtherUser");
 const deleteOtherUser=require("./routes/DeleteOtherUser");
 
 const getCodePath=require("./routes/GetCode")
+const getOtherUsers=require("./routes/GetOtherUsers")
+const editOtherUser=require("./routes/editOtherUser")
+const deleteOtherUser=require("./routes/DeleteOtherUser")
+const OnDevicePath=require("./routes/ON_Device")
+const On_All_DevicePath=require("./routes/ON_All_Devices")
+const OffDevicePath=require("./routes/OFF_Device")
+const Off_All_DevicePath=require("./routes/OFF_All_Devices")
+
 const path = require('path');
 
 
@@ -72,6 +80,10 @@ app.use("/api",addOtherUsers);
 app.use("/api",getOtherUsers);
 app.use("/api",editOtherUser);
 app.use("/api",deleteOtherUser);
+app.use("/api",OnDevicePath)
+app.use("/api",OffDevicePath)
+app.use("/api",Off_All_DevicePath)
+app.use("/api",On_All_DevicePath)
 
 app.use("/api",getCodePath)
 app.use('/data', dataRoutes);

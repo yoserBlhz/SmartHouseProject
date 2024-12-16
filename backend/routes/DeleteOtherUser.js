@@ -2,6 +2,7 @@ const express = require('express');
 const { User } = require('../models/SchemaModels.js');
 const routeDeleteUser = express.Router();
 
+
 routeDeleteUser.delete('/:code/:username/deleteOtherUser/:Name', async (req, res) => {
   const { code, username, Name } = req.params;
 

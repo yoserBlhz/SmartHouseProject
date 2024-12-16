@@ -1,14 +1,12 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
+import { NgIf } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-
-
+import { Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule],
-
+  imports: [RouterOutlet, FormsModule ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -16,5 +14,25 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
   
 export class AppComponent {
-  title = 'smartHouseFront';
+  /*isSidebarCollapsed = false;
+  showLayout = true;
+  sidebarOpen = false;
+
+
+  toggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
+  }
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+   
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+       
+        const noLayoutRoutes = ['/signin', '/signup','/'];
+        this.showLayout = !noLayoutRoutes.includes(event.url);
+      }
+    });
+  }*/
 }

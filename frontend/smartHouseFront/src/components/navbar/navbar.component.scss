@@ -139,23 +139,23 @@
 }
 
 .search-bar {
-  flex: 1; /* La barre de recherche occupe tout l'espace disponible */
-  text-align: center; /* Centre la barre de recherche */
+  flex: 1; 
+  text-align: center; 
 }
 
 .search-bar input {
   padding: 5px;
   border-radius: 4px;
   border: none;
-  width: 50%; /* Définit une largeur par défaut */
-  max-width: 300px; /* Limite la largeur */
+  width: 50%; 
+  max-width: 300px; 
 }
 
 .user-info {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  min-width: 200px; /* Assure que cet espace reste fixe */
+  min-width: 200px; 
 }
 
 .user-info mat-icon {
@@ -170,20 +170,21 @@
   margin-left: 10px;
 }
 
-/* Responsivité pour les petits écrans */
+
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column; /* Réorganise les éléments en colonne */
-    align-items: stretch; /* Permet aux éléments de prendre toute la largeur */
+    flex-direction: column; 
+    align-items: stretch; 
   }
 
   .search-bar {
-    text-align: center; /* Assure que la barre reste centrée */
-    margin-bottom: 10px; /* Ajoute un espace entre la recherche et les autres éléments */
+    text-align: center; 
+    margin-bottom: 10px;
   }
 
   .user-info {
-    justify-content: center; /* Centre les éléments utilisateur */
-    width: 100%; /* Prend toute la largeur */
+    justify-content: center; 
+    width: 100%;
   }
 }
+
