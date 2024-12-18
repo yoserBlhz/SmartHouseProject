@@ -14,19 +14,14 @@ const addOtherUsers=require("./routes/AddOtherUsers");
 const getOtherUsers=require("./routes/GetOtherUsers");
 const editOtherUser=require("./routes/editOtherUser");
 const deleteOtherUser=require("./routes/DeleteOtherUser");
-
 const getCodePath=require("./routes/GetCode")
-const getOtherUsers=require("./routes/GetOtherUsers")
-const editOtherUser=require("./routes/editOtherUser")
-const deleteOtherUser=require("./routes/DeleteOtherUser")
 const OnDevicePath=require("./routes/ON_Device")
 const On_All_DevicePath=require("./routes/ON_All_Devices")
 const OffDevicePath=require("./routes/OFF_Device")
 const Off_All_DevicePath=require("./routes/OFF_All_Devices")
-
+const deleteRoom=require("./routes/deleteRoom");
 const path = require('path');
-
-
+const joinHouse=require("./routes/joinHouse");
 const dataRoutes = require('./routes/data');
 
 // Initialisation de l'application Express
@@ -87,6 +82,11 @@ app.use("/api",On_All_DevicePath)
 
 app.use("/api",getCodePath)
 app.use('/data', dataRoutes);
+app.use("/api",deleteRoom);
+app.use("/api",joinHouse);
+
+
+
 // Configuration du port du serveur
 const port = 5000;
 app.listen(port, () => {
