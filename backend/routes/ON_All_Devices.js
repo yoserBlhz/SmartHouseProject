@@ -12,7 +12,7 @@ routeOnAll.post('/:username/on', async (req, res) => {
     const result = await User.updateOne(
       { userAdmin: username }, // Trouve l'utilisateur par son nom d'administrateur
       {
-        $set: { "HOME.$[].Appareils.$[].bouton": 0 } // Eteindre tous les appareils (bouton = 0)
+        $set: { "HOME.$[].Appareils.$[].bouton": 1 } // Eteindre tous les appareils (bouton = 0)
       },
       {
         arrayFilters: [{ "home.Appareils": { $exists: true } }] // Applique le filtre sur les appareils de chaque maison
