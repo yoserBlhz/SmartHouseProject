@@ -10,7 +10,7 @@
   }
   
   .app-sidebar {
-    width: 70px; /* ou selon la largeur de votre sidebar */
+    width: 70px; 
     background-color: #f4f4f4;
   }
   
@@ -45,7 +45,7 @@
   }
   
   .add-user-btn {
-    background-color: #34495e; /* Couleur Bootstrap */
+    background-color: #5519d0; /* Couleur Bootstrap */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -55,7 +55,7 @@
   }
   
   .add-user-btn:hover {
-    background-color: #394e63;
+    background-color: #6511cb;
   }
   
   
@@ -96,13 +96,16 @@
 //   }
 
 
+
+
+
   
   .add-user-section {
     margin-bottom: 20px;
   }
   
   .user-list {
-    background-color: #f8f9fa;
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 8px;
     padding: 20px;
   }
@@ -126,4 +129,14 @@
   }
   
 
+
+  .main-content {
+    background-image: url('/assets/users.jpg'); /* Chemin vers votre image */
+    background-size: cover; /* L'image couvre toute la page */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Empêche la répétition */
+    background-attachment: fixed; /* L'image reste fixe lors du défilement */
+    margin: 0; /* Supprime les marges */
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+  }
   

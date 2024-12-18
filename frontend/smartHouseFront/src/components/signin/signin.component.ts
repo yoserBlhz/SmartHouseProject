@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../Services/auth.service';
@@ -13,35 +13,70 @@ import { HttpClientModule } from '@angular/common/http';
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.scss'
 })
-export class SigninComponent {
-  signinForm: FormGroup;
-  errorMessage: string = '';
+export class SigninComponent implements OnInit {
+//   signinForm: FormGroup;
+//   errorMessage: string = '';
+
+//   constructor(
+//     private fb: FormBuilder,
+//     private authService: AuthService,
+//     private router: Router
+//   ) {
+//     this.signinForm = this.fb.group({
+//       username: ['', [Validators.required]],
+//       password: ['', [Validators.required]]
+//     });
+//   }
+
+//   onSignIn(): void {
+//     if (this.signinForm.valid) {
+//       this.authService.signin(this.signinForm.value).subscribe({
+//         next: (response) => {
+//           console.log('Signin successful:', response);
+//           this.router.navigate(['/dashboard']);
+//         },
+//         error: (error) => {
+//           console.error('Signin error:', error);
+//           this.errorMessage = error.error.message || 'An error occurred during signin. Please try again.';
+//         }
+//       });
+//     } else {
+//       this.errorMessage = 'Please fill in all required fields.';
+//     }
+//   }
+// }
+  loginForm: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
+    private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router
   ) {
-    this.signinForm = this.fb.group({
-      username: ['', [Validators.required]],
-      password: ['', [Validators.required]]
+    this.loginForm = this.formBuilder.group({
+            username: ['', [Validators.required]],
+            password: ['', [Validators.required]]
+          });
+  }
+
+  ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     });
   }
 
-  onSignIn(): void {
-    if (this.signinForm.valid) {
-      this.authService.signin(this.signinForm.value).subscribe({
-        next: (response) => {
-          console.log('Signin successful:', response);
+  onLogin() {
+    if (this.loginForm.valid) {
+      this.authService.signin(this.loginForm.value).subscribe(
+        (response) => {
+          // Handle successful login
           this.router.navigate(['/dashboard']);
         },
-        error: (error) => {
-          console.error('Signin error:', error);
-          this.errorMessage = error.error.message || 'An error occurred during signin. Please try again.';
+        (error) => {
+          // Handle login error
+          console.error(error);
         }
-      });
-    } else {
-      this.errorMessage = 'Please fill in all required fields.';
+      );
     }
   }
 }

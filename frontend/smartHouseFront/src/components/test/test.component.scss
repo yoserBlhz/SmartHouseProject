@@ -229,6 +229,67 @@
     color: #383874;
   }
   
+  .delete-room {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    //background-color: #64648c;
+    color: #e41717;
+  }
+
+  .btn-custom {
+    background-color: #394e63; 
+    color: white; /* Couleur du texte */
+    border: none;
+  }
+  
+  .btn-custom2 {
+    background-color: #4d6782; /* Couleur au survol */
+    color: white; /* Couleur du texte */
+    border: none;
+  }
+
+
+  .delete-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 16px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #e8346a68;
+    color: #383874;
+  }
+
+  .add-device-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 16px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #383874;
+    color: #ffffff;
+  }
+  
+  .btn-custom {
+    background-color: #394e63; 
+    color: white; /* Couleur du texte */
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  
+  .btn-custom2 {
+    background-color: #4d6782; /* Couleur au survol */
+    color: white; /* Couleur du texte */
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+
   .devices-section {
     margin: 20px;
   

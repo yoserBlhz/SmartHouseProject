@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DevicesNavSidComponent } from './devices-nav-sid.component';
+import { JoinhouseComponent } from './joinhouse.component';
 
-describe('DevicesNavSidComponent', () => {
-  let component: DevicesNavSidComponent;
-  let fixture: ComponentFixture<DevicesNavSidComponent>;
+describe('JoinhouseComponent', () => {
+  let component: JoinhouseComponent;
+  let fixture: ComponentFixture<JoinhouseComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DevicesNavSidComponent]
+      imports: [JoinhouseComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DevicesNavSidComponent);
+    fixture = TestBed.createComponent(JoinhouseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

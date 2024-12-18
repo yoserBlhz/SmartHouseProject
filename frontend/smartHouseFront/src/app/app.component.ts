@@ -14,25 +14,5 @@ import { Router, NavigationEnd } from '@angular/router';
 
   
 export class AppComponent {
-  /*isSidebarCollapsed = false;
-  showLayout = true;
-  sidebarOpen = false;
 
-
-  toggleSidebar() {
-    this.sidebarOpen = !this.sidebarOpen;
-  }
-
-  constructor(private router: Router) {}
-
-  ngOnInit(): void {
-   
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-       
-        const noLayoutRoutes = ['/signin', '/signup','/'];
-        this.showLayout = !noLayoutRoutes.includes(event.url);
-      }
-    });
-  }*/
 }

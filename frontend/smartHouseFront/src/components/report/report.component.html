@@ -1,0 +1,53 @@
+<!-- <div class="report-container">
+    <div class="chart-filters">
+      <button (click)="filterByDay()">Filter by Day</button>
+      <button (click)="filterByWeek()">Filter by Week</button>
+    </div>
+  
+    <div class="chart-container">
+      <div class="chart-item">
+        <chart 
+          [data]="temperatureData" 
+          [options]="chartOptions" 
+          [type]="'line'">
+        </chart>
+      </div>
+      
+      <div class="chart-item">
+        <canvas baseChart
+                [data]="humidityData"
+                [options]="chartOptions"
+                [type]="'line'">
+        </canvas>
+      </div>
+      <div class="chart-item">
+        <canvas baseChart
+                [data]="gasData"
+                [options]="chartOptions"
+                [type]="'bar'">
+        </canvas>
+      </div>
+    </div>
+  
+    <div class="notification-container" *ngIf="gasNotificationVisible">
+      <div class="notification-box">
+        <h3>Gas Level Notification</h3>
+        <p>The gas level has exceeded the threshold of {{ gasThreshold }}.</p>
+        <button (click)="gasNotificationVisible = false">Close</button>
+      </div>
+    </div>
+  </div> 
+ -->
+
+
+ <div class="dashboard-layout" [class.sidebar-closed]="isSidebarClosed">
+  <app-navbar></app-navbar>
+  <div class="main-container">
+    <app-sidebar class="app-sidebar" (sidebarToggled)="handleSidebarToggle($event)"></app-sidebar>
+    <div class="main-content">
+      <div class="add-room-section">
+      </div>
+      <app-report></app-report>
+    </div>
+  </div>
+</div>

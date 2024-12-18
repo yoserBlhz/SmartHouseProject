@@ -80,6 +80,7 @@ export class UsersComponent implements OnInit {
           document.body.classList.remove('modal-open');
           document.querySelector('.modal-backdrop')?.remove(); 
           this.loadUsers();
+          this.userForm.reset();
         },
         error: (error) => {
           console.error('Error adding user', error);

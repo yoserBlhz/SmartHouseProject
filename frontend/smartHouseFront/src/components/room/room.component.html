@@ -6,7 +6,8 @@
         <div class="room-overlay">
           <h3>{{ room.name }}</h3>
           <p>{{ room.description }}</p>
-          <button>{{ room.buttonText }}</button>
+          <!-- <button>{{ room.buttonText }}</button> -->
+          <button (click)="navigateToDevices(room)">{{ room.buttonText }}</button>
         </div>
       </div>
     </div>

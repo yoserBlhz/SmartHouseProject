@@ -73,6 +73,17 @@ export class AuthService {
       })
     );
   }
+  join(credentials: { username: string, password: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/${credentials.username}/${credentials.password}/LoginSimpleuser`,credentials).pipe(
+      tap((response: any) => {
+        if (response.code && response.username) {
+          const userInfo = { code: response.code, username: response.username };
+          this.userInfoSubject.next(userInfo);
+          localStorage.setItem('userInfo', JSON.stringify(userInfo));
+        }
+      })
+    );
+  }
 
   signout(): void {
     this.userInfoSubject.next(null);

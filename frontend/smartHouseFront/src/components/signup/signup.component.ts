@@ -1,9 +1,9 @@
 
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../Services/auth.service';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class SignupComponent {
   signupForm: FormGroup;
+  passwordFieldType: string = 'password'; // Default password field type
 
   constructor(
     private fb: FormBuilder,
@@ -49,6 +50,11 @@ export class SignupComponent {
     } else {
       alert('Please fill in all required fields correctly.');
     }
+  }
+
+
+  togglePasswordVisibility() {
+    this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
   }
   
 }
