@@ -1,7 +1,8 @@
 /* Full-screen background */
 .dynamic-bg {
     position: relative;
-    background-image:  url('/assets/rooms/livingroom.avif');
+    // background-image:  url('/assets/rooms/devivces.jpg');
+    background-image:  url('/assets/housse.jpg');
     background-size: cover;
     background-position: center;
     width: 100vw;
@@ -16,17 +17,17 @@
   }
   
   /* Shadow overlay */
-  .dynamic-bg::after {
-    content: '';
-    position: fixed; /* Fix the shadow overlay position */
-    top: 0;
-    left: 0;
-    width: 100vw; /* Ensure it covers the full viewport */
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1; /* Ensure it stays on top of the background image */
-    pointer-events: none; /* Allow interaction with other elements below */
-}
+//   .dynamic-bg::after {
+//     content: '';
+//     position: fixed; /* Fix the shadow overlay position */
+//     top: 0;
+//     left: 0;
+//     width: 100vw; /* Ensure it covers the full viewport */
+//     height: 100vh;
+//     background: rgba(0, 0, 0, 0.5);
+//     z-index: 1; /* Ensure it stays on top of the background image */
+//     pointer-events: none; /* Allow interaction with other elements below */
+// }
   
   /* Dashboard container */
   .dashboard {
@@ -336,4 +337,4 @@
   }
   
   
-  
+ 

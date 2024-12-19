@@ -39,7 +39,7 @@ export class SignupComponent {
       this.authService.signup(formData).subscribe({
         next: (response) => {
           console.log('Signup successful:', response);
-          alert('Account created successfully!');
+          // alert('Account created successfully!');
           this.router.navigate(['/login']);
         },
         error: (error) => {

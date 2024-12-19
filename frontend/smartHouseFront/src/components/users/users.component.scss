@@ -45,7 +45,8 @@
   }
   
   .add-user-btn {
-    background-color: #5519d0; /* Couleur Bootstrap */
+    // background-color: #5519d0; /* Couleur Bootstrap */
+    background-color: #394e63;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -55,7 +56,8 @@
   }
   
   .add-user-btn:hover {
-    background-color: #6511cb;
+  //  background-color: #6511cb;
+  background-color: #4d6782;
   }
   
   
@@ -131,7 +133,7 @@
 
 
   .main-content {
-    background-image: url('/assets/users.jpg'); /* Chemin vers votre image */
+    background-image: url('/assets/housse.jpg'); /* Chemin vers votre image */
     background-size: cover; /* L'image couvre toute la page */
     background-position: center; /* Centre l'image */
     background-repeat: no-repeat; /* Empêche la répétition */

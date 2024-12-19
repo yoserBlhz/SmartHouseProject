@@ -161,6 +161,8 @@ export class RoomComponent implements OnInit, OnChanges {
         return 'assets/livingRoom.jpg';
       case 'kitchen':
         return 'assets/kitchen.jpg';
+      case 'garden':
+          return 'assets/garden.jpg';
       default:
         return 'assets/room.jpg';
     }
