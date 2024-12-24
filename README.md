@@ -3,8 +3,11 @@ This is a Smart House Monitoring project developed using Angular for the fronten
 
 ## Features
 **User Management: Add, edit, and delete users.
+
 **Room Management: Add, configure, and monitor rooms with devices (e.g., lights, fans, air conditioners, televisions).
+
 **Dashboard: Real-time monitoring of room statuses and device states.
+
 ## Technologies Used
 **Frontend: Angular
 **Backend: Node.js
